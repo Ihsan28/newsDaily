@@ -1,0 +1,2 @@
+# newsDAILY
+ Web Technology project
