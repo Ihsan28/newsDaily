@@ -17,10 +17,9 @@ require('../control/signupformvalidation.php');
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet" />
 
-    <title>registration page</title>
+    <title>EDITOR's SIGN UP</title>
     <script src="../js/signupformvalidation.js"></script>
 </head>
-
 
 <body>
     <div class="main-container">
@@ -81,8 +80,7 @@ require('../control/signupformvalidation.php');
 
         <div class="box">
             <input type="text" id="phone" name="phone" placeholder="Enter phone number" />
-            <p class="em"><?php //echo $validatePhone; 
-                            ?></p>
+            <p class="em"><?php echo $validatePhone; ?></p>
         </div>
 
         <fieldset class="fieldset">
@@ -90,30 +88,27 @@ require('../control/signupformvalidation.php');
 
             <div class="box small">
                 <input type="text" name="street" placeholder="Enter street" />
-                <p class="em"><?php //echo $validateStreet; 
-                                ?></p>
+                <p class="em"><?php echo $validateStreet; ?></p>
             </div>
 
             <div class="box small">
                 <input type="text" name="post" placeholder="Enter post number" />
-                <p class="em"><?php //echo $validatePost; 
-                                ?></p>
+                <p class="em"><?php echo $validatePost; ?></p>
             </div>
 
             <div class="box small">
-                <input type=text list=countrie placeholder="Select your country">
-                <datalist id=countrie>
+                <input type=text list=country name="country" placeholder="Select your country">
+                <datalist id=country>
                     <option> Bangladesh</option>
                     <option> England</option>
                     <option> America</option>
                 </datalist>
-                <p class="em"><?php //echo $validateCountry; 
-                                ?></p>
+                <p class="em"><?php echo $validateCountry; ?></p>
             </div>
         </fieldset>
 
         <fieldset>
-            <legend>Profile Picture</legend>
+            <legend>Profile Picture(Optional)</legend>
             <div class="small">
                 <input type="file" id="image" name="image" accept="image/*">
                 <!-- <input type="submit" value="Upload" name="submit"> -->

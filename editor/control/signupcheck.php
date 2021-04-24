@@ -14,13 +14,13 @@ function checkEditorExists($email)
     }
     $connection->closeCon($conobj);
 }
-function insertEditor($name, $email,$password,$gender,$dob)
+function insertEditor($name, $email,$password,$gender,$dob,$phone,$address,$profile)
 {
     $connection = new db();
     $conobj = $connection->openCon();
-    $insertStatus = $connection->addEditor($conobj, "editor", $name, $email,$password,$gender,$dob);
+    $isInsert = $connection->addEditor($conobj, "editor", $name, $email,$password,$gender,$dob,$phone,$address,$profile);
     $connection->closeCon($conobj);
 
-    return $insertStatus;
+    return $isInsert;
 
 }

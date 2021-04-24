@@ -23,10 +23,9 @@ class db
         return $result;
     }
 
-    function addEditor($con, $table, $name, $email, $password, $gender, $dob)
+    function addEditor($con, $table, $name, $email, $password, $gender, $dob,$phone,$address,$profile)
     {
-        //$status = "pending";
-        $sql = "INSERT INTO " . $table . " (name, email, password, gender, dob, status) VALUES ('" . $name . "','" . $email . "','" . $password . "','" . $gender . "','" . $dob . "','pending')";
+        $sql = "INSERT INTO " . $table . " (name, email, password, gender, dob, phone, address, image, status) VALUES ('" . $name . "','" . $email . "','" . $password . "','" . $gender . "','" . $dob . "','" . $phone . "','" . $address . "','" . $profile . "','pending')";
         if ($con->query($sql) === TRUE) {
             return true;
         } else {

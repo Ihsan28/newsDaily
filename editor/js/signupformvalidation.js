@@ -33,7 +33,7 @@ function validateForm() {
         flag = false;
     } else {
         
-        ex=/^[0-9a-zA-Z_' ]@&*/;
+        ex=/^[0-9a-zA-Z_' ]*/;
         if (name.length < 5) {
             document.getElementById("nameerror").innerHTML = "you must enter minimum 5 letter of your name";
             alert("name must be five characters or more");

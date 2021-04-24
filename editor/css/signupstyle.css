@@ -74,13 +74,13 @@
     padding-bottom: 5px;
 }
 
-.fieldset {
+/* .fieldset {
     border-radius: 2px solid rgb(180, 58, 58);
 }
 
 .fieldset legend {
     font-size: 16px;
-}
+} */
 
 /* .gender {
     
@@ -107,7 +107,6 @@
     margin-left: 8px;
     height: 12px;
     width: 12px;
-
 }
 
 .gender div {
@@ -117,12 +116,12 @@
 .dob input {
     width: 100%;
     height: 20px; 
-    border: disabled transparent; 
+    border: 1px white solid; 
     /* border-radius: 5px; */
     font-family: 'Segoe UI', sans-serif;
     font-size: 16px;
     padding-left: 250px;
-    padding-bottom: 10px;
+    padding-bottom: 7px;
     /* color: rgb(24, 24, 27); */
     font-weight: 500;
 }
