@@ -8,12 +8,12 @@
     display: grid;
     grid-template-columns: 1fr;
     /* background-color:red; */
-    width: 40vw;
+    width: 50vw;
     margin-left: 50%;
     border: 2px solid rgb(216, 213, 213);
     border-radius: 1px;
     transform: translate(-50%);
-    margin-top: 50px;
+    margin-top: 40px;
     grid-gap: 13px;
     padding: 20px;
     /* border: 1px solid black; */
@@ -59,7 +59,7 @@
     border-radius: 5px;
 }
 
-.input-box input {
+.box input {
     font-size: 16px;
     width: 100%;
     height: 30px;
@@ -68,16 +68,30 @@
     border-radius: 5px;
 }
 
-.gender {
-    /* padding: 3px; */
-    border: 1px solid black;
-    border-radius: 5px;
-    /* padding-left: 20px; */
-    height: 30px;
+.small {
+    width: 95%;
+    padding-left: 25px;
+    padding-bottom: 5px;
 }
 
-.gender div {
+.fieldset {
+    border-radius: 2px solid rgb(180, 58, 58);
+}
+
+.fieldset legend {
+    font-size: 16px;
+}
+
+/* .gender {
+    
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+} */
+
+.gender {
     padding-left: 20px;
+    padding-bottom: 5px;
 }
 
 .gender p {
@@ -97,27 +111,28 @@
 }
 
 .gender div {
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .dob input {
     width: 100%;
-    height: 30px;
-    border: 1px solid black;
-    border-radius: 5px;
+    height: 20px; 
+    border: disabled transparent; 
+    /* border-radius: 5px; */
     font-family: 'Segoe UI', sans-serif;
     font-size: 16px;
-    padding-left: 20px;
+    padding-left: 250px;
+    padding-bottom: 10px;
     /* color: rgb(24, 24, 27); */
     font-weight: 500;
 }
 
-.dob p {
+/* .dob p {
     display: block;
     margin-top: 8px;
     font-family: 'Segoe UI', sans-serif;
     font-weight: 700;
-}
+} */
 
 .button-signup input {
     margin-top: 8px;

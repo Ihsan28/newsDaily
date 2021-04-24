@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if ($flag == 1) {
-        if (checkUserExists($email)) {
+        if (checkEditorExists($email)) {
             $validateEmail = "Already has an user with this email";
         } else {
             $flag=insertEditor($name, $email,$password,$gender,$date);

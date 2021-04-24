@@ -1,7 +1,7 @@
 <?php
 class db
 {
-    function OpenCon()
+    function openCon()
     {
         $dbhost = "localhost";
         $dbuser = "root";
@@ -11,22 +11,22 @@ class db
 
         return $con;
     }
-    function CheckUser($con, $table, $email, $password, $type)
+    function checkEditor($con, $table, $email, $password)
     {
-        $status = "approved";
-        $result = $con->query("SELECT * FROM " . $table . " WHERE email='" . $email . "' AND password='" . $password . "'AND type='" . $type . "' ANd status = '" . $status . "'");
+        //$status = "approved";
+        $result = $con->query("SELECT * FROM " . $table . " WHERE email='" . $email . "' AND password='" . $password . "' AND status = 'approved'");
         return $result;
     }
-    function CheckUserexist($con, $table, $email, $type)
+    function checkEditorExist($con, $table, $email)
     {
-        $result = $con->query("SELECT * FROM " . $table . " WHERE email='" . $email . "' AND type='" . $type . "'");
+        $result = $con->query("SELECT * FROM " . $table . " WHERE email='" . $email . "'");
         return $result;
     }
 
-    function addEditor($con, $table, $name, $email, $password, $gender, $dob, $type)
+    function addEditor($con, $table, $name, $email, $password, $gender, $dob)
     {
-        $status = "pending";
-        $sql = "INSERT INTO " . $table . " (name, email, password, gender, dob, type ,status) VALUES ('" . $name . "','" . $email . "','" . $password . "','" . $gender . "','" . $dob . "','" . $type . "','" . $status . "')";
+        //$status = "pending";
+        $sql = "INSERT INTO " . $table . " (name, email, password, gender, dob, status) VALUES ('" . $name . "','" . $email . "','" . $password . "','" . $gender . "','" . $dob . "','pending')";
         if ($con->query($sql) === TRUE) {
             return true;
         } else {
@@ -34,19 +34,19 @@ class db
         }
     }
 
-    function update_user_data($con,$table,$email,$name)
+    function updateEditorData($con,$table,$email,$name)
     {
         $sql ="update ".$table." set name = '".$name."' where email = '".$email."'";
         $result = $con->query($sql);
     }
 
-    function getUserData($con,$table,$email)
+    function getEditorData($con,$table,$email)
     {
         $result = $con->query("SELECT * FROM  $table where email = '".$email."'");
         return $result;
     }
 
-    function delete_user($con,$table,$email)
+    function deleteEditor($con,$table,$email)
     {
         $sql ="DELETE  from ".$table." where email = '".$email."'";
         $result = $con->query($sql);
@@ -64,7 +64,7 @@ class db
         $result = $con->query($sql);
     }
 
-    function CloseCon($con)
+    function closeCon($con)
     {
         $con->close();
     }

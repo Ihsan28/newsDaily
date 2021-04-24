@@ -13,16 +13,16 @@ if (isset($_POST['update'])) {
     if ($f == 1) {
         $connection = new db();
         $conobj = $connection->OpenCon();
-        $userdata = $connection->update_user_data($conobj, "users", $_SESSION["email"], $_POST['name']);
-        $connection->CloseCon($conobj);
+        $userdata = $connection->updateEditorData($conobj, "editor", $_SESSION["email"], $_POST['name']);
+        $connection->closeCon($conobj);
     }
     header("Location: ../view/profile.php");
 }
 if (isset($_POST['delete'])) {
 
     $connection = new db();
-    $conobj = $connection->OpenCon();
-    $userdata = $connection->delete_user($conobj, "users", $_SESSION["email"]);
-    $connection->CloseCon($conobj);
+    $conobj = $connection->openCon();
+    $userdata = $connection->deleteEditor($conobj, "editor", $_SESSION["email"]);
+    $connection->closeCon($conobj);
     header("Location: ./logout.php");
 }

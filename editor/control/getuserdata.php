@@ -2,7 +2,7 @@
 require('../model/db.php');
 
 $connection = new db();
-$conobj = $connection->OpenCon();
-$userdata = $connection->getUserData($conobj, "users",$_SESSION["email"]);
-$connection->CloseCon($conobj);
+$conobj = $connection->openCon();
+$userdata = $connection->getEditorData($conobj, "editor",$_SESSION["email"]);
+$connection->closeCon($conobj);
 ?>

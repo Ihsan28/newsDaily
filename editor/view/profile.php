@@ -39,6 +39,6 @@ header("Location: ../control/login.php");
     Delete your account:
     <input type="submit" value="delete" name="delete">
     </form>
-    <a href="./pageone.php"> back to homepage </a>
+    <a href="./home.php"> back to homepage </a>
 </body>
 </html>

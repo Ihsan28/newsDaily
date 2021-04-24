@@ -33,7 +33,7 @@ function validateForm() {
         flag = false;
     } else {
         
-        ex=/^[0-9a-zA-Z_' ]- @ # & */;
+        ex=/^[0-9a-zA-Z_' ]@&*/;
         if (name.length < 5) {
             document.getElementById("nameerror").innerHTML = "you must enter minimum 5 letter of your name";
             alert("name must be five characters or more");
@@ -42,8 +42,8 @@ function validateForm() {
             document.getElementById("nameerror").innerHTML = "you can only use only a-z, A-Z, -, ', @, #, & and * those characters at name field";
             flag = false;
         } else {
-            document.getElementById("nameerror").innerHTML = "your name is "+name;
-            flag = false;
+            document.getElementById("nameerror").innerHTML = "";
+            //flag = false;
         }
         
         ex=/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
@@ -61,9 +61,12 @@ function validateForm() {
             flag = false;
         }
         
-        if (confirmpassword === password) {
+        if (confirmpassword !== password) {
             document.getElementById("confirmpassworderror").innerHTML = "you must match with password";
             flag = false;
+        }
+        else{
+            document.getElementById("confirmpassworderror").innerHTML = "";
         }
         
         if(!flag) {

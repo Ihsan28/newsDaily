@@ -12,9 +12,8 @@ if (isset($_POST['submit'])) {
     $password = $_POST['password'];
 
     $connection = new db();
-    $conobj = $connection->OpenCon();
-
-    $userQuery = $connection->CheckUser($conobj, "users", $email, $password, "editor");
+    $conobj = $connection->openCon();
+    $userQuery = $connection->checkEditor($conobj, "editor", $email, $password);
 
     if ($userQuery->num_rows > 0) {
       $_SESSION['email'] = $_POST['email'];
@@ -22,6 +21,6 @@ if (isset($_POST['submit'])) {
     } else {
       $error = "Email or Password is invalid";
     }
-    $connection->CloseCon($conobj);
+    $connection->closeCon($conobj);
   }
 }

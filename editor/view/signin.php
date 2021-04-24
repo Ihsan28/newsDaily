@@ -2,7 +2,7 @@
 include('../control/signincheck.php');
 
 if (isset($_SESSION['email'])) {
-    header("location: pageone.php");
+    header("location: home.php");
 }
 ?>
 <!DOCTYPE html>
