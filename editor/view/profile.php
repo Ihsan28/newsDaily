@@ -7,7 +7,7 @@ header("Location: ../control/login.php");
 }
 ?>
 <?php
-    require('../control\getuserdata.php');
+    require('../control/geteditorinfo.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

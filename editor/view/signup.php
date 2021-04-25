@@ -100,8 +100,10 @@ require('../control/signupformvalidation.php');
                 <input type=text list=countrie id="country" name="country" placeholder="Select your country">
                 <datalist id=countrie>
                     <option> Bangladesh</option>
+                    <option> India</option>
                     <option> England</option>
                     <option> America</option>
+                    <option> Canada</option>
                 </datalist>
                 <p class="em"><?php echo $validateCountry; ?></p>
             </div>

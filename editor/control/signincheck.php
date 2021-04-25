@@ -3,7 +3,6 @@ include('../model/db.php');
 session_start();
 
 $error = "";
-//session data
 if (isset($_POST['submit'])) {
   if (empty($_POST['email']) || empty($_POST['password'])) {
     $error = "Email or Password is invalid";
@@ -23,4 +22,4 @@ if (isset($_POST['submit'])) {
     }
     $connection->closeCon($conobj);
   }
-}
+} 
