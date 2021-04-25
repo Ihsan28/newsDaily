@@ -33,14 +33,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if($_FILES["image"]["size"] > 1000)
     {
-        $path+=$random.basename($_FILES["image"]["name"]);
-        if (file_exists($path)) {
-            echo "Sorry, file already exists.";
-            $uploadOk = 0;
+        $profile= $path.$random.basename($_FILES["image"]["name"]);
+        if(file_exists($profile))
+        {
+            $random = rand();
+            $profile= $path.$random.basename($_FILES["image"]["name"]);
         }
         elseif(move_uploaded_file($_FILES["image"]["tmp_name"], "../../resources/profile/".$random.$_FILES["image"]["name"]))
         {
-            $profile= $path;
+            echo "Image uploaded successfully";
         }
     }
     
@@ -51,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $validateName = "Name must be at least 5 characters";
         $flag = 0;
     } elseif(!preg_match("/^[a-zA-Z-'\. ]*$/", $name)){
-        $validateName = "you must enter your name";
+        $validateName = "you can only use (a-z), (A-Z), '-', ', '.' at your name";
         $flag = 0;
     } else {
         $validateName = "your name is " . $name;
@@ -110,7 +111,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $validatePhone = "your phone number is " . $phone;
     }
 
-   
     if (empty($street)) {
         $validateStreet = "Empty street field";
         $flag = 0;
