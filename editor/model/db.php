@@ -13,10 +13,16 @@ class db
     }
     function checkEditor($con, $table, $email, $password)
     {
-        //$status = "approved";
         $result = $con->query("SELECT * FROM " . $table . " WHERE email='" . $email . "' AND password='" . $password . "' AND status = 'approved'");
         return $result;
     }
+
+    function checkEditorinfo($con, $table, $email, $password)
+    {
+        $result = $con->query("SELECT * FROM " . $table . " WHERE email='" . $email . "' AND password='" . $password . "'");
+        return $result;
+    }
+
     function checkEditorExist($con, $table, $email)
     {
         $result = $con->query("SELECT * FROM " . $table . " WHERE email='" . $email . "'");
