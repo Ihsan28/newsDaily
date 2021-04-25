@@ -11,7 +11,7 @@ $validateStreet="";
 $validatePost="";
 $validateCountry="";
 
-$path="newsdaily/resources/profile/";
+$path="../../resources/profile/";
 $profile="";
 
 $userExistsValidation = "";
@@ -31,24 +31,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $country = $_REQUEST["country"];
     $random = rand();
 
-    move_uploaded_file($_FILES["image"]["tmp_name"], "../../resources/profile/".$random.$_FILES["image"]["name"]);
-    $profile= $path.$random.$_FILES["image"]["name"];
-
-    if (empty($name) || strlen($name) < 5 || !preg_match("/^[a-zA-Z-' ]*$/", $name)) {
+    if($_FILES["image"]["size"] > 1000)
+    {
+        $path+=$random.basename($_FILES["image"]["name"]);
+        if (file_exists($path)) {
+            echo "Sorry, file already exists.";
+            $uploadOk = 0;
+        }
+        elseif(move_uploaded_file($_FILES["image"]["tmp_name"], "../../resources/profile/".$random.$_FILES["image"]["name"]))
+        {
+            $profile= $path;
+        }
+    }
+    
+    if (empty($name)) {
+        $validateName = "Empty name field";
+        $flag = 0;
+    } elseif(strlen($name) < 5){
+        $validateName = "Name must be at least 5 characters";
+        $flag = 0;
+    } elseif(!preg_match("/^[a-zA-Z-'\. ]*$/", $name)){
         $validateName = "you must enter your name";
         $flag = 0;
     } else {
         $validateName = "your name is " . $name;
     }
-    if (empty($email) || !preg_match("/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/", $email)) {
-        $validateEmail = "you must enter your email";
+
+    if (empty($email)) {
+        $validateEmail = "Empty email field";
+        $flag = 0;
+    }
+    elseif(!preg_match("/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/", $email)){
+        $validateEmail = "Email can have (a-z), (0-9), (._-) and must have one '@' after that one '.' 2 to 6 index from last";
         $flag = 0;
     } else {
         $validateEmail = "your email is " . $email;
     }
 
     if (empty($password) || empty($confirmPassword)) {
-        $validPassword = "enter valid password ";
+        $validPassword = "Empty password field.";
         $flag = 0;
     } elseif ($password != $confirmPassword) {
         $validPassword = "password not match";
@@ -57,15 +78,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $validPassword = "password must contain at least 8 characters";
         $flag = 0;
     } elseif (!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/", $password)) {
-
-        $validPassword = "condition  not match";
+        $validPassword = "Password must have at least one character from (a-z), (A-Z), (0-9), (!@#$%^&*) each group";
         $flag = 0;
     } else {
         $validPassword = "password correct";
     }
 
     if (!isset($_REQUEST["gender"])) {
-        $genderValidation = "select your gender";
+        $genderValidation = "Select your gender";
         $flag = 0;
     } else {
         $gender = $_REQUEST["gender"];
@@ -74,14 +94,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($date)) {
 
-        $validDate = "date field is required";
+        $validDate = "Enter your birthdate";
         $flag = 0;
     } else {
-        $validDate = "select date is " . $date;
+        $validDate = "Your  birthdate is " . $date;
     }
 
-    if (empty($phone) || !preg_match("/^[+0-9-]*$/", $phone)) {
-        $validatePhone = "you must enter your phone ";
+    if (empty($phone)) {
+        $validatePhone = "Empty phone field";
+        $flag = 0;
+    } elseif(!preg_match("/^\+?[0-9-]{7,15}$/", $phone)){
+        $validatePhone = "(0-9),'-' can use only from this group and + at beginning. Not less than 7 or more than 15 digit";
         $flag = 0;
     } else {
         $validatePhone = "your phone number is " . $phone;
@@ -89,21 +112,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
    
     if (empty($street)) {
-        $validateStreet = "you must enter street";
+        $validateStreet = "Empty street field";
         $flag = 0;
     }
-    else if(!preg_match("/^([A-Za-z0-9#]+)([\d\w-#`~.\s',]*)$/", $street)){
-        $validateStreet = "you can only use alphanumeric characters with '#' on start then numbers and (-#`~./,)";
+    else if(!preg_match("/^([A-Za-z0-9#]+)([\d\w\-#`.\s',]*)$/", $street)){
+        $validateStreet = "you can only use alphanumeric characters and (-#`./,)";
         $flag = 0;
     } else {
-        $validateEmail = "your street is " . $street;
+        $validateStreet = "your street is " . $street;
     }
 
-    if (empty($post) || !preg_match("/^[+0-9-]*$/", $post)) {
+    if (empty($post)) {
         $validatePost = "you must enter your phone ";
         $flag = 0;
+    } elseif(!preg_match("/^[0-9]+$/", $post)){
+        $validatePost = "you must enter digit(0-9)";
+        $flag = 0;
     } else {
-        $validatePost = "your phone number is " . $post;
+        $validatePost = "your post number is " . $post;
     }
 
     if (!isset($_REQUEST["country"])) {
@@ -115,9 +141,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($flag == 1) {
         if (checkEditorExists($email)) {
-            $validateEmail = "Already has an user with this email";
+            $validateEmail = "Already has an editor with this email";
         } else {
-            $address= $street.", ".$post.", ".$country;
+            $address= $street."|".$post."|".$country;
             $flag=insertEditor($name, $email,$password,$gender,$date,$phone,$address,$profile);
             if($flag)
             {
