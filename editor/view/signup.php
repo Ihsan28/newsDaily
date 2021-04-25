@@ -87,18 +87,18 @@ require('../control/signupformvalidation.php');
             <legend>Address:</legend>
 
             <div class="box small">
-                <input type="text" name="street" placeholder="Enter street" />
+                <input type="text" id="street" name="street" placeholder="Enter street" />
                 <p class="em"><?php echo $validateStreet; ?></p>
             </div>
 
             <div class="box small">
-                <input type="text" name="post" placeholder="Enter post number" />
+                <input type="text" id="post" name="post" placeholder="Enter postal code" />
                 <p class="em"><?php echo $validatePost; ?></p>
             </div>
 
             <div class="box small">
-                <input type=text list=country name="country" placeholder="Select your country">
-                <datalist id=country>
+                <input type=text list=countrie id="country" name="country" placeholder="Select your country">
+                <datalist id=countrie>
                     <option> Bangladesh</option>
                     <option> England</option>
                     <option> America</option>

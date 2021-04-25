@@ -132,7 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $validatePost = "your post number is " . $post;
     }
 
-    if (!isset($_REQUEST["country"])) {
+    if (empty($country)) {
         $validateCountry = "Select your country";
         $flag = 0;
     } else {

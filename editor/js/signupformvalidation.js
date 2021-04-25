@@ -1,13 +1,14 @@
 function validateForm() {
-    
-    //document.getElementById("nameerror").innerHTML = "your name is ";
-
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
     var confirmpassword = document.getElementById("confirmPassword").value;
     var radios = document.getElementsByName("gender");
     var birthday = document.getElementById("birthday").value;
+    var phone = document.getElementById("phone").value;
+    var street = document.getElementById("street").value;
+    var post = document.getElementById("post").value;
+    var country = document.getElementById("country").value;
 
     var length = radios.length;
     var flag = true;
@@ -27,7 +28,11 @@ function validateForm() {
         password.length === 0 ||
         confirmPassword.length === 0 ||
         birthday.length === 0 ||
-        gender.length === 0
+        gender.length === 0  ||
+        phone.length === 0 ||
+        street.length === 0 ||
+        post.length === 0 ||
+        country.length === 0
     ) {
         alert("fill all fields");
         flag = false;
