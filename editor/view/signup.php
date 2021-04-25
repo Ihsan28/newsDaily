@@ -92,7 +92,7 @@ require('../control/signupformvalidation.php');
             </div>
 
             <div class="box small">
-                <input type="text" id="post" name="post" placeholder="Enter postal code" />
+                <input type="text" id="post" name="post" placeholder="Enter postal code/ city" />
                 <p class="em"><?php echo $validatePost; ?></p>
             </div>
 

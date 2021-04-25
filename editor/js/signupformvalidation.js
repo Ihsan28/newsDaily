@@ -48,7 +48,6 @@ function validateForm() {
             flag = false;
         } else {
             document.getElementById("nameerror").innerHTML = "";
-            //flag = false;
         }
         
         ex=/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
@@ -72,6 +71,30 @@ function validateForm() {
         }
         else{
             document.getElementById("confirmpassworderror").innerHTML = "";
+        }
+
+        ex=/^\+?[0-9-]{7,15}$/;
+        if(!phone.match(ex)){
+            document.getElementById("phoneerror").innerHTML = "(0-9),'-' can use only from this group and + at beginning. Not less than 7 or more than 15 digit";
+            flag = false;
+        } else {
+            document.getElementById("phoneerror").innerHTML="";
+        }
+
+        ex=/^([A-Za-z0-9#]+)([\d\w\-#`.\s',]*)$/;
+        if(!street.match(ex)){
+            document.getElementById("streeterror").innerHTML = "you can only use alphanumeric characters and (-#`./,)";
+            flag = false;
+        } else {
+            document.getElementById("streeterror").innerHTML ="";
+        }
+
+        ex=/^[0-9a-z\-\s]+$/;
+        if(!post.match(ex)){
+            document.getElementById("posterror").innerHTML = "Postal/city code can have digit(0-9) and (a-z,'-')";
+            flag = false;
+        } else {
+            document.getElementById("posterror").innerHTML="";
         }
         
         if(!flag) {

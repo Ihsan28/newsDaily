@@ -125,11 +125,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($post)) {
         $validatePost = "you must enter your phone ";
         $flag = 0;
-    } elseif(!preg_match("/^[0-9]+$/", $post)){
-        $validatePost = "you must enter digit(0-9)";
+    } elseif(!preg_match("/^[0-9a-z\-\s]+$/", $post)){
+        $validatePost = "you must enter digit(0-9) or (a-z,'-')";
         $flag = 0;
     } else {
-        $validatePost = "your post number is " . $post;
+        $validatePost = "your post/city code is " . $post;
     }
 
     if (empty($country)) {
