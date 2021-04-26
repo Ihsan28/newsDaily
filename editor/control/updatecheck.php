@@ -5,7 +5,7 @@ function checkEditorExists($email)
     $conobj = $connection->openCon();
     $userQuery = $connection->checkEditorExist($conobj, "editor", $email);
     $connection->closeCon($conobj);
-    if ($userQuery->num_rows == 1) {
+    if ($userQuery->num_rows <= 1 ) {
         return false;
     } else {
         return true;
