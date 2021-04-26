@@ -6,13 +6,13 @@ function checkEditorExists($email)
     $connection = new db();
     $conobj = $connection->openCon();
     $userQuery = $connection->checkEditorExist($conobj, "editor", $email);
-
+    $connection->closeCon($conobj);
     if ($userQuery->num_rows > 0) {
         return true;
     } else {
         return false;
     }
-    $connection->closeCon($conobj);
+    
 }
 function insertEditor($name, $email,$password,$gender,$dob,$phone,$address,$profile)
 {

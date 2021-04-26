@@ -39,9 +39,10 @@ class db
         }
     }
 
-    function updateEditorData($con,$table,$email,$name)
+    function updateEditorData($con,$table,$session_mail,$name, $email, $password, $gender, $dob,$phone,$address,$profile)
     {
-        $sql ="update ".$table." set name = '".$name."' where email = '".$email."'";
+        $sql ="UPDATE $table set name = '".$name."', email='".$email."', password='".$password."', gender='".$gender."', dob='".$dob."', phone='".$phone."', address='".$address."', image='".$profile."' where email = '".$session_mail."'";
+        echo $sql;
         $result = $con->query($sql);
     }
 

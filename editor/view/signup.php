@@ -97,8 +97,8 @@ require('../control/signupformvalidation.php');
             </div>
 
             <div class="box small">
-                <input type=text list=countrie id="country" name="country" placeholder="Select your country">
-                <datalist id=countrie>
+                <input type="text" list="countrie" id="country" name="country" placeholder="Select your country">
+                <datalist id="countrie">
                     <option> Bangladesh</option>
                     <option> India</option>
                     <option> England</option>
