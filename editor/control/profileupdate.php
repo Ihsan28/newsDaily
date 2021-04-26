@@ -145,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if ($flag == 1) {
-        if (checkEditorExists($email)) {
+        if (checkEditorExists($email) && $_SESSION["email"]!=$email) {
             $validateEmail = "Already has an editor with this email";
         } else {
             $address = $street . "|" . $post . "|" . $country;
