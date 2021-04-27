@@ -15,7 +15,7 @@ require('../control/profileupdate.php')
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/signupstyle.css">
+    <link rel="stylesheet" href="../css/profilestyle.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet" />
 
@@ -27,7 +27,13 @@ require('../control/profileupdate.php')
 </head>
 
 <body>
+    <div class="profile">
     <h1>Your Profile</h1>
+    </div>
+    <div class="btnback">
+        <a href="./home.php">BACK</a>
+    </div>
+    
     <div class="main-container">
         <div class="logo">
             <h2>news<span>DAILY</span></h3>
@@ -35,6 +41,8 @@ require('../control/profileupdate.php')
         <div class="editor">
             <h1>EDITOR</h1>
         </div>
+
+        
 
         <div class="box">
             <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
@@ -116,21 +124,32 @@ require('../control/profileupdate.php')
 
         <fieldset>
             <legend>Profile Picture(Optional)</legend>
-            <div class="small">
+            <div class="small ppicture">
                 <input type="file" id="image" name="image" accept="image/*" value="<?php echo $profile; ?>">
             </div>
         </fieldset>
+        <br>
 
         <div class="box">
             <input type="password" name="confirmPassword" id="confirmPassword" placeholder=" Enter password to confirm it's you" />
             <p class="em"><?php echo $validConfirmPassword; ?></p>
         </div>
 
-        <input type="submit" value="update" name="update">
-        <br><br>
-        Delete your account:
-        <input type="submit" value="delete" name="delete">
-        <a href="./home.php"> back to homepage </a>
+        <div class="btnupdate">
+            <input type="submit" value="update" name="update">
+        </div>
+        
+        
+        <fieldset>
+            <legend>Delete your account:</legend>
+            <div class="btndelete">
+                <input  type="submit" value="delete" name="delete">
+            </div>
+            
+        </fieldset>
+
+        
+        
 
         </form>
 

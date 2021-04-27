@@ -152,8 +152,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (isset($_POST['update'])) {
 
                 updateEditorExists($name, $email, $password, $gender, $date, $phone, $address, $profile);
-                
-                
             }
             if (isset($_POST['delete'])) {
 
