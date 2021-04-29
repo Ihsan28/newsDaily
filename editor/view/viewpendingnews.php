@@ -58,8 +58,6 @@ require('../control/viewpendingnews.php');
         <a href="./profile.php" class="link">Account Settings</a>
     </div>
     <section id="space-maintain">
-        <p><?php echo $_SESSION["nid"] ?></p>
-        <p><?php echo $_SESSION["id"] ?></p>
 
         <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">
 
@@ -109,7 +107,7 @@ require('../control/viewpendingnews.php');
         MyAjaxFunc();
     </script>
                 <div id="main-container">
-                    <p>Here is the pending list</p>
+                    
                 </div>
     </section>
 </body>
