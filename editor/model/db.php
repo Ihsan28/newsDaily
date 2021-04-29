@@ -46,9 +46,9 @@ class db
         $result = $con->query($sql);
     }
 
-    function updateNewsData($con,$table,$id,$date,$eid,$status,$remark)
+    function updateNewsData($con,$table,$id,$eid,$status,$remark)
     {
-        $sql ="UPDATE $table set date = '".$$date."', eid='".$eid."', status='".$status."', remark='".$remark."' where id = '".$id."'";
+        $sql ="UPDATE $table set eid='".$eid."', status='".$status."', remark='".$remark."' where id = '".$id."'";
         echo $sql;
         $result = $con->query($sql);
     }
@@ -66,11 +66,24 @@ class db
         
     }
     
+    function getAprrovedCharacter($con, $table)
+    {
+        $result = $con->query("SELECT * FROM  $table where status = 'approved'");
+        return $result;
+    }
+
     function getPendingNewsRequest($con,$table)
     {
         $result = $con->query("SELECT * FROM  $table where status = 'pending'"); 
         return $result;
     }
+
+    function getNewsRequest($con,$table,$nid)
+    {
+        $result = $con->query("SELECT * FROM  $table where id = '".$nid."'"); 
+        return $result;
+    }
+
     function update_news_status($con,$table,$id,$status)
     {
         $sql ="update ".$table." set status = '".$status."' where id = '".$id."'";  //delete

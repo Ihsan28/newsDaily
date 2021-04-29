@@ -1,5 +1,5 @@
 
-function adminsignuprequestcount() {
+function pendingnewsrequestcount() {
     var xhttp = new XMLHttpRequest();
     var res;
     xhttp.onreadystatechange = function () {
@@ -7,7 +7,7 @@ function adminsignuprequestcount() {
             res = JSON.parse(this.responseText);
             console.log(res);
             var l = Object.keys(res).length;
-            let nwsRequest = document.getElementById("admin-req-count");
+            let nwsRequest = document.getElementById("pendingnews-count");
             nwsRequest.innerHTML = l.toString();
         }
     };
@@ -17,54 +17,6 @@ function adminsignuprequestcount() {
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();
 }
-
-function userCount() {
-    var xhttp = new XMLHttpRequest();
-    var res;
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            res = JSON.parse(this.responseText);
-            console.log(res);
-            var l = Object.keys(res).length;
-            let usercount = document.getElementById("user-count");
-            usercount.innerHTML = l.toString();
-        }
-    };
-
-    xhttp.open(
-        "POST",
-        "/wt-final-project/admin/controller/getalluser.php",
-        true
-    );
-
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send();
-}
-
-
-function activeAdminCount() {
-    var xhttp = new XMLHttpRequest();
-    var res;
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            res = JSON.parse(this.responseText);
-            console.log(res);
-            var l = Object.keys(res).length;
-            let usercount = document.getElementById("ac-admin-c");
-            usercount.innerHTML = l.toString();
-        }
-    };
-
-    xhttp.open(
-        "POST",
-        "/wt-final-project/admin/controller/getActiveAdmin.php",
-        true
-    );
-
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send();
-}
-
 
 function activeReporterCount() {
     var xhttp = new XMLHttpRequest();
@@ -81,7 +33,7 @@ function activeReporterCount() {
 
     xhttp.open(
         "POST",
-        "/wt-final-project/admin/controller/getActiveReporter.php",
+        "/newsdaily/editor/control/getActiveReporter.php",
         true
     );
 
@@ -103,11 +55,7 @@ function activeEditorCount() {
         }
     };
 
-    xhttp.open(
-        "POST",
-        "/wt-final-project/admin/controller/getActiveEditor.php",
-        true
-    );
+    xhttp.open("POST","/newsdaily/editor/control/getActiveEditor.php",true);
 
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();
@@ -126,50 +74,17 @@ function newsCount() {
         }
     };
 
-    xhttp.open(
-        "POST",
-        "/wt-final-project/admin/controller/getAllNews.php",
-        true
-    );
+    xhttp.open("POST","/newsdaily/editor/control/getAllNews.php",true);
 
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();
 }
-
-function reportCount() {
-    var xhttp = new XMLHttpRequest();
-    var res;
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            res = JSON.parse(this.responseText);
-            console.log(res);
-            var l = Object.keys(res).length;
-            let usercount = document.getElementById("total-report-count");
-            usercount.innerHTML = l.toString();
-        }
-    };
-
-    xhttp.open(
-        "POST",
-        "/wt-final-project/admin/controller/getAllReport.php",
-        true
-    );
-
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send();
-}
-
 
 function MyAjaxFunc() {
-    adminsignuprequestcount();
-    editorsignuprequestcount();
-    reportersignuprequestcount();
-    userCount();
-    activeAdminCount();
+    pendingrequestcount();
     activeReporterCount();
     activeEditorCount();
     newsCount();
-    reportCount();
 }
 
 

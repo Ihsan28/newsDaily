@@ -11,12 +11,12 @@ function MyAjaxFunc() {
         console.log(l);
         var d;
 
-        for (var i = 0; i < l; i++) {
-          title = document.createElement("p");
-          title.innerHTML = res[i].title;
-          title.classList.add("name1");
-          maincontainer.appendChild(title);
-        }
+        // for (var i = 0; i < l; i++) {
+        //   title = document.createElement("p");
+        //   title.innerHTML = res[i].title;
+        //   title.classList.add("name1");
+        //   maincontainer.appendChild(title);
+        // }
         // ../control/verifynewscheck.php
         for (i = 0; i < l; i++) {
           d = document.createElement("div");
@@ -24,6 +24,7 @@ function MyAjaxFunc() {
           <form action="../control/viewpendingnews.php" method="post" > 
           <input type="text" name="id" id="id" value ="`+ res[i].id +`">
           <input type="text" name="title" value ="` + res[i].title + `">
+          <input type="text" name="body" value ="` + res[i].body + `">
           <input type="submit" value="view" name="view" >
           </form>
           `;

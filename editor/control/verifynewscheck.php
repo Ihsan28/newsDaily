@@ -1,23 +1,23 @@
 <?php
-function newsAccept($id, $date, $eid, $remark)
+function newsAccept($id, $eid, $remark)
 {
     if (isset($_POST['accept'])) {
 
         $connection = new db();
         $conobj = $connection->OpenCon();
-        $editordata = $connection->updateNewsData($conobj, "news", $id, $date, $eid, "accept", $remark);
+        $editordata = $connection->updateNewsData($conobj, "news", $id, $eid, "accept", $remark);
         $connection->closeCon($conobj);
     
         header("Location: ../view/pendingnews.php");
     }
 }
-function newsReject($id, $date, $eid,$remark)
+function newsReject($id, $eid,$remark)
 {
     if (isset($_POST['reject'])) {
 
         $connection = new db();
         $conobj = $connection->OpenCon();
-        $editordata = $connection->updateNewsData($conobj, "news", $id, $date, $eid, "reject", $remark);
+        $editordata = $connection->updateNewsData($conobj, "news", $id, $eid, "reject", $remark);
         $connection->closeCon($conobj);
     
         header("Location: ../view/pendingnews.php");

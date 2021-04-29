@@ -62,12 +62,6 @@ require('../control/geteditorinfo.php');
             <br>
             <p id="total-news-count">0</p>
         </div>
-        <div class="u-count" id="r-count">
-            <p>Total Report Count</p>
-            <a href="">view all</a>
-            <br>
-            <p id="total-report-count">0</p>
-        </div>
 
         <div class="u-count" id="r-count">
             <p>Total Active Editor</p>
@@ -83,14 +77,12 @@ require('../control/geteditorinfo.php');
             <p id="ac-reporter-count">0</p>
         </div>
 
-
-
         <div class="u-count" id="admin-req">
             
-            <p>Admin signup requests</p>
-            <a href="./adminSignupRequest.php">view all</a>
+            <p>Pending News count</p>
+            <a href="./pendingnews.php">view all</a>
             <br>
-            <p id="admin-req-count">0</p>
+            <p id="pendingnews-count">0</p>
         </div>
 
 

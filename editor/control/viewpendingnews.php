@@ -8,10 +8,10 @@ if (isset($_POST['view'])) {
 }
 if (isset($_POST['accept'])) {
 
-    ;
+     newsAccept($_SESSION['nid'],$_SESSION['id'],"");
 }
 if (isset($_POST['reject'])) {
 
-    ;
+     newsReject($_SESSION['nid'],$_SESSION['id'],"");
     
 }

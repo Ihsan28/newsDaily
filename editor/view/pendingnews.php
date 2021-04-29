@@ -59,7 +59,7 @@ require('../control/viewpendingnews.php');
     </div>
 
     <section id="space-maintain">
-    <div id="main-container"> <p>Here is the pending list</p> 
+    <div id="main-container"> <p>ID TITLE BODY</p> 
 
     </div>
     <script src="../js/getpendingnews.js"></script>
