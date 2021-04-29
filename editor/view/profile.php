@@ -5,7 +5,7 @@ if (empty($_SESSION["email"])) {
 } elseif (!empty($_SESSION["password"])) {
 }
 require('../control/geteditorinfo.php');
-require('../control/profileupdate.php')
+require('../control/profileupdatevalidation.php')
 ?>
 
 <!DOCTYPE html>
@@ -41,8 +41,6 @@ require('../control/profileupdate.php')
         <div class="editor">
             <h1>EDITOR</h1>
         </div>
-
-        
 
         <div class="box">
             <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">

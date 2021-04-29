@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $random = rand();
             $profile= $path.$random.basename($_FILES["image"]["name"]);
         }
-        elseif(move_uploaded_file($_FILES["image"]["tmp_name"], "../../resources/profile/".$random.$_FILES["image"]["name"]))
+        if(move_uploaded_file($_FILES["image"]["tmp_name"], "../../resources/profile/".$random.$_FILES["image"]["name"]))
         {
             echo "Image uploaded successfully";
         }

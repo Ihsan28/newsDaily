@@ -46,6 +46,13 @@ class db
         $result = $con->query($sql);
     }
 
+    function updateNewsData($con,$table,$id,$date,$eid,$status,$remark)
+    {
+        $sql ="UPDATE $table set date = '".$$date."', eid='".$eid."', status='".$status."', remark='".$remark."' where id = '".$id."'";
+        echo $sql;
+        $result = $con->query($sql);
+    }
+
     function getEditorData($con,$table,$email)
     {
         $result = $con->query("SELECT * FROM  $table where email = '".$email."'");
