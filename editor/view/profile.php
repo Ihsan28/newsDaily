@@ -2,7 +2,6 @@
 session_start();
 if (empty($_SESSION["email"])) {
     header("Location: ../control/login.php");
-} elseif (!empty($_SESSION["password"])) {
 }
 require('../control/geteditorinfo.php');
 require('../control/profileupdatevalidation.php')
@@ -16,6 +15,7 @@ require('../control/profileupdatevalidation.php')
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/profilestyle.css">
+    <link rel="stylesheet" href="../css/navigationstyle.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet" />
 
@@ -27,19 +27,45 @@ require('../control/profileupdatevalidation.php')
 </head>
 
 <body>
-    <div class="profile">
-    <h1>Your Profile</h1>
+
+<div class="dis-property">
+        <div class="top-nav">
+            <div class="logo">
+                <h3>news<span>DAILY</span></h3>
+            </div>
+            <div class="editor">
+                <p>Editor's Panel</p>
+            </div>
+            <div class="item-3">
+                <div class="profile-info">
+                    <div class="pic-area"><img src="<?php echo $profile ?>" alt="..\..\resources\profile\default.png"></div>
+                    <div class="a2">
+                        <p class="u-name"><?php echo $name ?></p>
+                    </div>
+                    <div class="a3">
+                        <p>Editor</p>
+                    </div>
+
+                </div>
+                <div class="btn-logout">
+                    <a href="../control/logout.php">Sign Out</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="btnback">
-        <a href="./home.php">BACK</a>
+    <div class="nav-left">
+        <a href="./home.php"  class="link">Main Panel</a>
+        <a href="" class="link">News</a>
+        <a href="./pendingnews.php" class="link">Pending News</a>
+        <a href="" class="link">Requests</a>
+        <a href="./profile.php" id="current-panel" class="link">Account Settings</a>
     </div>
+    <!-- content -->
+    <section id="space-maintain">
     
     <div class="main-container">
-        <div class="logo">
-            <h2>news<span>DAILY</span></h3>
-        </div>
         <div class="editor">
-            <h1>EDITOR</h1>
+            <h1>YOUR PROFILE</h1>
         </div>
 
         <div class="box">
@@ -150,7 +176,7 @@ require('../control/profileupdatevalidation.php')
         
 
         </form>
-
+    </section>
 </body>
 
 </html>
