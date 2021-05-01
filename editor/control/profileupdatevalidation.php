@@ -4,6 +4,7 @@ if (empty($_SESSION["email"])) {
     header("Location: ../control/login.php"); // Redirecting To Home Page
 }
 //require('../model/db.php');
+require_once('../model/db.php');
 require('updatecheck.php');
 
 $validateName = "";
@@ -45,6 +46,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } elseif (move_uploaded_file($_FILES["image"]["tmp_name"], "../../resources/profile/" . $random . $_FILES["image"]["name"])) {
             echo "Image uploaded successfully";
         }
+    }
+    else{
+        $profile ="../../resources/profile/default.png";
     }
 
     if (empty($name)) {
@@ -130,8 +134,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($post)) {
         $validatePost = "you must enter your phone ";
         $flag = 0;
-    } elseif (!preg_match("/^[0-9a-z\-\s]+$/", $post)) {
-        $validatePost = "you must enter digit(0-9) or (a-z,'-')";
+    } elseif (!preg_match("/^[0-9A-Za-z\-\s,\/]+$/", $post)) {
+        $validatePost = "you must enter digit(0-9) or (a-z,A-Z,'-'.',','/')";
         $flag = 0;
     } else {
         $validatePost = "your post/city code is " . $post;

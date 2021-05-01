@@ -4,7 +4,7 @@ if (empty($_SESSION["email"])) {
     header("Location: ./login.php");
 }
 require('../control/geteditorinfo.php');
-require('../control/viewpendingnews.php');
+require('../control/viewpendingnewscheck.php');
 //require('../control/verifynewscheck.php');
 ?>
 <!-- $dob,$image -->
@@ -19,6 +19,7 @@ require('../control/viewpendingnews.php');
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/navigationstyle.css">
+    <link rel="stylesheet" href="../css/pendingnews.css">
     <title>Document</title>
 </head>
 
@@ -51,21 +52,39 @@ require('../control/viewpendingnews.php');
 
     </div>
     <div class="nav-left">
-        <a href="./home.php"  class="link">Main Panel</a>
-        <a href="" class="link">News</a>
+        <a href="./home.php" class="link">Main Panel</a>
+        <!-- <a href="" class="link">News</a> -->
         <a href="" class="link" id="current-panel">Pending News</a>
-        <a href="" class="link">Requests</a>
+        <!-- <a href="" class="link">Requests</a> -->
         <a href="./profile.php" class="link">Account Settings</a>
     </div>
 
     <section id="space-maintain">
-    <div id="main-container"> <p>ID TITLE BODY</p> 
+        <div id="main-container">
+            <div class="p-container">
+                <div>
+                    <p>ID </p>
+                </div>
+                <div>
+                    <p>REPORTER</p>
+                </div>
+                <div>
+                    <p>TITLE </p>
+                </div>
+                <div>
+                    <p>CATAGORY</p>
+                </div>
+                <div>
+                    <p>VIEW</p>
+                </div>
+                
+            </div>
 
-    </div>
-    <script src="../js/getpendingnews.js"></script>
-    <script>
-        MyAjaxFunc();
-    </script>
+            <script src="../js/getpendingnews.js"></script>
+            <script>
+                MyAjaxFunc();
+            </script>
+        </div>
     </section>
 
 </body>

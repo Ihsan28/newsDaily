@@ -6,26 +6,34 @@ function MyAjaxFunc() {
         res = JSON.parse(this.responseText);
         console.log(res);
         var maincontainer = document.getElementById("main-container");
-        var title;
         var l = Object.keys(res).length;
         console.log(l);
         var d;
 
-        // for (var i = 0; i < l; i++) {
-        //   title = document.createElement("p");
-        //   title.innerHTML = res[i].title;
-        //   title.classList.add("name1");
-        //   maincontainer.appendChild(title);
-        // }
-        // ../control/verifynewscheck.php
         for (i = 0; i < l; i++) {
           d = document.createElement("div");
           d.innerHTML = `
-          <form action="../control/viewpendingnews.php" method="post" > 
-          <input type="text" name="id" id="id" value ="`+ res[i].id +`">
-          <input type="text" name="title" value ="` + res[i].title + `">
-          <input type="text" name="body" value ="` + res[i].body + `">
+          <form action="../control/viewpendingnewscheck.php" method="post" > 
+          <div class="header-container">
+          <div class="">
+          <p>`+ res[i].id +`</p>
+          </div>
+          <div class="">
+          <p>`+ res[i].rid +`</p>
+          </div>
+          <div class="">
+          <p>` + res[i].title + `<p>
+          </div>
+          <div class="">
+          <p>` + res[i].catagory + `</p>
+          </div>
+          <div class="view">
           <input type="submit" value="view" name="view" >
+          </div>
+          <input type="hidden" name="id" id="id" value ="`+ res[i].id +`">
+          <input type="hidden" name="rid" id="rid" value ="`+ res[i].rid +`">
+          </div>
+          
           </form>
           `;
 
@@ -36,7 +44,7 @@ function MyAjaxFunc() {
       }
     };
 
-    xhttp.open("POST", "/newsdaily/editor/control/getpendingnews.php", true);
+    xhttp.open("POST", "/wt-final-project/editor/control/getpendingnews.php", true);
   
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();

@@ -78,9 +78,9 @@ function validateForm() {
             flag = false;
         }
 
-        ex=/^[0-9a-z\-\s]+$/;
+        ex=/^[0-9A-Za-z\-\s,\/]+$/;
         if(!post.match(ex)){
-            alert("Postal/city code can have digit(0-9) and (a-z,'-')");
+            alert("Postal/city code can have digit(0-9) and (a-z,A-Z,'-',',','/')");
             flag = false;
         }
     }

@@ -9,10 +9,11 @@
     grid-template-columns: 1fr;
     /* background-color:red; */
     width: 50%;
-    margin-left: 50%;
+    margin-left: 275px;
     border: 2px solid rgb(216, 213, 213);
     border-radius: 1px;
-    transform: translate(-50%);
+    /* transform: translate(-50%); */
+
     margin-top: 40px;
     grid-gap: 13px;
     padding: 20px;

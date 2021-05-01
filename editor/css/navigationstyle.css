@@ -132,7 +132,7 @@ body {
 .nav-left {
     padding-top: 50px;
     margin-top: 60px;
-    background-color: #1a255f;
+    background-color: #1E1E1E;
     width: 260px;
     height: 919px;
     position: fixed;
@@ -161,16 +161,17 @@ body {
 }
 
 .link:hover {
-    background-color: rgb(56, 56, 146);
+    background-color: rgb(42, 45, 46);
     ;
 }
 
 #current-panel {
-    background-color: rgb(56, 56, 146);
+    background-color: rgb(42, 45, 46);
 }
 
 #space-maintain {
+    
     padding-top: 60px;
-    padding-left: 260px;
+    padding-left: 275px;
     width: 100vw;
 }

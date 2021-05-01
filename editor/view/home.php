@@ -3,6 +3,11 @@ session_start();
 if (empty($_SESSION["email"])) {
     header("Location: ./login.php");
 }
+else {
+    $cookie_name = "user";
+    $cookie_value = $_SESSION['email'];
+    setcookie($cookie_name, $cookie_value, time() + (86400), "/");
+}
 require('../control/geteditorinfo.php');
 ?>
 <!DOCTYPE html>
@@ -17,6 +22,8 @@ require('../control/geteditorinfo.php');
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/navigationstyle.css">
     <link rel="stylesheet" href="../css/homestyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/jquery.js"></script>
     <title>Document</title>
 </head>
 
@@ -48,9 +55,9 @@ require('../control/geteditorinfo.php');
     </div>
     <div class="nav-left">
         <a href="./home.php" id="current-panel" class="link">Main Panel</a>
-        <a href="" class="link">News</a>
+        <!-- <a href="" class="link">News</a> -->
         <a href="./pendingnews.php" class="link">Pending News</a>
-        <a href="" class="link">Requests</a>
+        <!-- <a href="" class="link">Requests</a> -->
         <a href="./profile.php" class="link">Account Settings</a>
     </div>
     <!-- content -->
@@ -58,21 +65,18 @@ require('../control/geteditorinfo.php');
 
         <div class="u-count" id="n-count">
             <p>Total News Count</p>
-            <a href="">view all</a>
             <br>
             <p id="total-news-count">0</p>
         </div>
 
         <div class="u-count" id="r-count">
             <p>Total Active Editor</p>
-            <a href="">view all</a>
             <br>
             <p id="ac-editor-count">0</p>
         </div>
 
         <div class="u-count" id="reporter-count">
             <p>Total Active Reporter</p>
-            <a href="">view all</a>
             <br>
             <p id="ac-reporter-count">0</p>
         </div>
@@ -80,7 +84,7 @@ require('../control/geteditorinfo.php');
         <div class="u-count" id="admin-req">
             
             <p>Pending News count</p>
-            <a href="./pendingnews.php">view all</a>
+            <a id="view-btn" href="./pendingnews.php">view all</a>
             <br>
             <p id="pendingnews-count">0</p>
         </div>

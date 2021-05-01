@@ -1,8 +1,8 @@
 <?php
-require('../model/db.php');
+require_once('../model/db.php');
 $connection = new db();
 $conobj = $connection->OpenCon();
-$data = $connection->getnewsdata($conobj, "news");
+$data = $connection->getNewsCount($conobj, "news");
 $connection->CloseCon($conobj);
 $emparray = array();
 while ($row = mysqli_fetch_assoc($data)) {

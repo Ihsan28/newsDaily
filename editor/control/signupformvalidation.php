@@ -44,6 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Image uploaded successfully";
         }
     }
+    else{
+        $profile= "../../resources/profile/default.png";
+    }
     
     if (empty($name)) {
         $validateName = "Empty name field";
@@ -125,8 +128,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($post)) {
         $validatePost = "you must enter your phone ";
         $flag = 0;
-    } elseif(!preg_match("/^[0-9a-z\-\s]+$/", $post)){
-        $validatePost = "you must enter digit(0-9) or (a-z,'-')";
+    } elseif(!preg_match("/^[0-9A-Za-z\-\s,\/]+$/", $post)){
+        $validatePost = "you must enter digit(0-9) or (a-z,'-','/')";
         $flag = 0;
     } else {
         $validatePost = "your post/city code is " . $post;
@@ -147,7 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $flag=insertEditor($name, $email,$password,$gender,$date,$phone,$address,$profile);
             if($flag)
             {
-                header("Location: ../view/signupsuccess.php");
+                header("Location: ../view/signin.php");
             }
             else
             {

@@ -3,8 +3,10 @@ session_start();
 if (empty($_SESSION["email"])) {
     header("Location: ../control/login.php");
 }
+
+require('../control/profileupdatevalidation.php');
 require('../control/geteditorinfo.php');
-require('../control/profileupdatevalidation.php')
+
 ?>
 
 <!DOCTYPE html>
@@ -55,9 +57,9 @@ require('../control/profileupdatevalidation.php')
     </div>
     <div class="nav-left">
         <a href="./home.php"  class="link">Main Panel</a>
-        <a href="" class="link">News</a>
+        <!-- <a href="" class="link">News</a> -->
         <a href="./pendingnews.php" class="link">Pending News</a>
-        <a href="" class="link">Requests</a>
+        <!-- <a href="" class="link">Requests</a> -->
         <a href="./profile.php" id="current-panel" class="link">Account Settings</a>
     </div>
     <!-- content -->
@@ -90,7 +92,7 @@ require('../control/profileupdatevalidation.php')
                 <fieldset>
                     <legend>PASSWORD :</legend>
                     <div class="small">
-                        <input type="password" name="password" id="password" value="<?php echo $password; ?>" placeholder="Enter your password" />
+                        <input type="password" name="password" id="password" value="<?php echo $password; ?>" placeholder="Enter at least 8 character password & contains at least one from (a-z), (A-Z), (0-9), (!@#$%^&*) each group" />
                         <p class="em"><?php echo $validPassword; ?></p>
                     </div>
                 </fieldset>

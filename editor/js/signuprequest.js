@@ -6,7 +6,6 @@ function MyAjaxFunc(){
       res=  JSON.parse(this.responseText);
       console.log(res);
       var maincontainer= document.getElementById("maincontainer");
-      var name;
       var length = Object.keys(res).length;
       console.log(length);
 
@@ -43,7 +42,7 @@ function MyAjaxFunc(){
     }
   };
 
-  xhttp.open("POST","/NewsDaily/editor/control/newsrequestdata.php",true);
+  xhttp.open("POST","/wt-final-project/editor/control/newsrequestdata.php",true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send();
 }

@@ -46,9 +46,16 @@ class db
         $result = $con->query($sql);
     }
 
-    function updateNewsData($con,$table,$id,$eid,$status,$remark)
+    function updateNewsStatus($con,$table,$id,$eid,$status,$remark)
     {
         $sql ="UPDATE $table set eid='".$eid."', status='".$status."', remark='".$remark."' where id = '".$id."'";
+        echo $sql;
+        $result = $con->query($sql);
+    }
+
+    function updateNewsData($con,$table,$id,$title,$body,$eid,$status,$remark)
+    {
+        $sql ="UPDATE $table set eid='".$eid."', title='".$title."', body='".$body."', status='".$status."', remark='".$remark."' where id = '".$id."'";
         echo $sql;
         $result = $con->query($sql);
     }
@@ -72,6 +79,12 @@ class db
         return $result;
     }
 
+    function getReporter($con, $table,$id)
+    {
+        $result = $con->query("SELECT * FROM  $table where id = '".$id."'");
+        return $result;
+    }
+
     function getPendingNewsRequest($con,$table)
     {
         $result = $con->query("SELECT * FROM  $table where status = 'pending'"); 
@@ -84,6 +97,13 @@ class db
         return $result;
     }
 
+    function getNewsCount($con,$table)
+    {
+        $result = $con->query("SELECT * FROM  $table"); 
+        return $result;
+    }
+
+
     function update_news_status($con,$table,$id,$status)
     {
         $sql ="update ".$table." set status = '".$status."' where id = '".$id."'";  //delete
@@ -94,4 +114,6 @@ class db
     {
         $con->close();
     }
+
+
 }

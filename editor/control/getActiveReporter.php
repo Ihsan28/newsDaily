@@ -1,5 +1,5 @@
 <?php
-require('../model/db.php');
+require_once('../model/db.php');
 $connection = new db();
 $conobj = $connection->OpenCon();
 $data = $connection->getAprrovedCharacter($conobj, "reporter");

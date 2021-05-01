@@ -43,7 +43,7 @@ if (isset($_SESSION['email'])) {
             <div id="sign-up-btn"> <a href="./signup.php"> sign up</a></div>
 
             <div class="style6">
-                <a href="">Forgotten password?</a>
+                <!-- <a href="">Forgotten password?</a> -->
             </div>
     </form>
 

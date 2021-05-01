@@ -89,9 +89,9 @@ function validateForm() {
             document.getElementById("streeterror").innerHTML ="";
         }
 
-        ex=/^[0-9a-z\-\s]+$/;
+        ex=/^[0-9A-Za-z\-\s,\/]+$/;
         if(!post.match(ex)){
-            document.getElementById("posterror").innerHTML = "Postal/city code can have digit(0-9) and (a-z,'-')";
+            document.getElementById("posterror").innerHTML = "Postal/city code can have digit(0-9) and (a-z,'-','/')";
             flag = false;
         } else {
             document.getElementById("posterror").innerHTML="";
