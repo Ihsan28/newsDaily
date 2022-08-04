@@ -6,6 +6,13 @@ if (isset($_POST['view'])) {
     viewNews();
     
 }
+
+if (isset($_POST['viewApproved'])) {
+
+    viewApprovedNews();
+    
+}
+
 if (isset($_POST['accept'])) {
 
      newsAccept($_SESSION['nid'],$_SESSION['id'],"");
@@ -20,6 +27,12 @@ if (isset($_POST['reject'])) {
 
      newsReject($_SESSION['nid'],$_SESSION['id'],"");
     
+}
+
+if (isset($_POST['hidden'])) {
+
+    newsHide($_SESSION['nid'],$_SESSION['id'],"");
+   
 }
 
 function newsAccept($id, $eid, $remark)
@@ -63,6 +76,19 @@ function newsReject($id, $eid,$remark)
     }
 }
 
+function newsHide($id, $eid,$remark)
+{
+    if (isset($_POST['hidden'])) {
+
+        $connection = new db();
+        $conobj = $connection->OpenCon();
+        $editordata = $connection->updateNewsStatus($conobj, "news", $id, $eid, "hidden", $remark);
+        $connection->closeCon($conobj);
+    
+        header("Location: ../view/hidenews.php");
+    }
+}
+
 function viewNews(){
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
      
@@ -72,6 +98,19 @@ function viewNews(){
             $_SESSION['nid']=$nid;
             $_SESSION['rid']=$rid;
             header("Location: ../view/viewpendingnews.php?nid=".$nid);
+                
+    }
+}
+
+function viewApprovedNews(){
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+     
+        $nid=$_REQUEST["id"];
+        $rid=$_REQUEST["rid"];
+        session_start();
+            $_SESSION['nid']=$nid;
+            $_SESSION['rid']=$rid;
+            header("Location: ../view/viewApprovednews.php?nid=".$nid);
                 
     }
 }

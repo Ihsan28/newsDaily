@@ -79,6 +79,12 @@ class db
         return $result;
     }
 
+    function getAprrovedNews($con, $table)
+    {
+        $result = $con->query("SELECT * FROM  $table where status = 'approved'"); 
+        return $result;
+    }
+
     function getReporter($con, $table,$id)
     {
         $result = $con->query("SELECT * FROM  $table where id = '".$id."'");
