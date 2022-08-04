@@ -4,8 +4,6 @@ if (empty($_SESSION["email"])) {
     header("Location: ./login.php");
 }
 require('../control/geteditorinfo.php');
-require('../control/viewpendingnewscheck.php');
-//require('../control/verifynewscheck.php');
 ?>
 <!-- $dob,$image -->
 
@@ -18,7 +16,7 @@ require('../control/viewpendingnewscheck.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/pendingnews.css">
+    <link rel="stylesheet" href="../css/pendingeditor.css">
     <title>Document</title>
 </head>
 
@@ -33,21 +31,21 @@ require('../control/viewpendingnewscheck.php');
                     <p>ID </p>
                 </div>
                 <div>
-                    <p>REPORTER</p>
+                    <p>NAME</p>
                 </div>
                 <div>
-                    <p>TITLE </p>
+                    <p>EMAIL</p>
                 </div>
                 <div>
-                    <p>CATAGORY</p>
+                    <p>GENDER</p>
                 </div>
                 <div>
-                    <p>VIEW</p>
+                    <p>JOINING</p>
                 </div>
 
             </div>
 
-            <script src="../js/getpendingnews.js"></script>
+            <script src="../js/getActiveEditor.js"></script>
             <script>
                 MyAjaxFunc();
             </script>

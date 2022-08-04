@@ -42,7 +42,7 @@ function MyAjaxFunc(){
     }
   };
 
-  xhttp.open("POST","/wt-final-project/editor/control/newsrequestdata.php",true);
+  xhttp.open("POST","/newsDaily/editor/control/newsrequestdata.php",true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send();
 }

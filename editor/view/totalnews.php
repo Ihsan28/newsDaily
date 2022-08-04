@@ -5,7 +5,6 @@ if (empty($_SESSION["email"])) {
 }
 require('../control/geteditorinfo.php');
 require('../control/viewpendingnewscheck.php');
-//require('../control/verifynewscheck.php');
 ?>
 <!-- $dob,$image -->
 
@@ -47,7 +46,7 @@ require('../control/viewpendingnewscheck.php');
 
             </div>
 
-            <script src="../js/getpendingnews.js"></script>
+            <script src="../js/gettotalnews.js"></script>
             <script>
                 MyAjaxFunc();
             </script>

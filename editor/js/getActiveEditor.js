@@ -19,31 +19,27 @@ function MyAjaxFunc() {
           <p>`+ res[i].id +`</p>
           </div>
           <div class="text-bold">
-          <p>`+ res[i].rid +`</p>
+          <p>`+ res[i].name +`</p>
           </div>
           <div class="">
-          <p>` + res[i].title + `<p>
+          <p>` + res[i].email + `<p>
           </div>
           <div class="text-bold">
-          <p>` + res[i].catagory + `</p>
+          <p>` + res[i].gender + `</p>
           </div>
           <div class="view">
-          <input type="submit" value="view" name="view" >
+          <p>` + res[i].doj + `</p>
           </div>
-          <input type="hidden" name="id" id="id" value ="`+ res[i].id +`">
-          <input type="hidden" name="rid" id="rid" value ="`+ res[i].rid +`">
+        
           </div>
           </form>
           `;
-
-          //console.log(res[i].id);
-
           maincontainer.appendChild(d);
         }
       }
     };
 
-    xhttp.open("POST", "/newsDaily/editor/control/getpendingnews.php", true);
+    xhttp.open("POST", "/newsDaily/editor/control/getActiveEditor.php", true);
   
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();

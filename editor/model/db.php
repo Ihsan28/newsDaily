@@ -91,6 +91,12 @@ class db
         return $result;
     }
 
+    function getHiddenNews($con,$table)
+    {
+        $result = $con->query("SELECT * FROM  $table where status = 'hidden'"); 
+        return $result;
+    }
+
     function getNewsRequest($con,$table,$nid)
     {
         $result = $con->query("SELECT * FROM  $table where id = '".$nid."'"); 
@@ -100,6 +106,12 @@ class db
     function getNewsCount($con,$table)
     {
         $result = $con->query("SELECT * FROM  $table"); 
+        return $result;
+    }
+
+    function getuser($con,$table)
+    {
+        $result = $con->query("SELECT * FROM  $table where status = 'approved'"); 
         return $result;
     }
 

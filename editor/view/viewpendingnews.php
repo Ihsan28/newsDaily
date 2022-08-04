@@ -19,62 +19,27 @@ require('../control/getreporter.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/navigationstyle.css">
     <link rel="stylesheet" href="../css/newsview.css">
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../js/jquery.js"></script>
 </head>
 
 <body>
-    <div class="dis-property">
-        <div class="top-nav">
-            <div class="logo ">
-                <h3>news<span>DAILY</span></h3>
-            </div>
-            <div class="editor">
-                <p>Editor's Panel</p>
-            </div>
-            <div class="item-3">
-                <div class="profile-info">
-                    <div class="pic-area"><img src="<?php echo $profile ?>" alt="profile image"></div>
-                    <div class="a2">
-                        <p class="u-name"><?php echo $name ?></p>
-                    </div>
-
-                    <div class="a3">
-                        <p>Editor</p>
-                    </div>
-                </div>
-
-                <div class="btn-logout">
-                    <a href="../control/logout.php">Sign Out</a>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-    <div class="nav-left">
-        <a href="./home.php" class="link">Main Panel</a>
-        <!-- <a href="" class="link">News</a> -->
-        <a href="./pendingnews.php" class="link" id="current-panel">Pending News</a>
-        <!-- <a href="" class="link">Requests</a> -->
-        <a href="./profile.php" class="link">Account Settings</a>
-    </div>
+    <?php include('./navigation.php') ?>
+    <?php include('./sideBar.php') ?>
 
     <section id="space-maintain">
         <div class="main-container">
             <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">
-            <div class="title">
+                <div class="title">
                     <h4> REPORTER: </h4>
-            </div>
-            <div class="header-container">
-            <div class="pic"><img src=<?php echo $rprofile?> alt="profile image"></div>
-                <p id="id"><b>Id: <?php echo $rid ?></b></p>
-                <p id="name">Name: <?php echo $rname ?></p>
+                </div>
+                <div class="header-container">
+                    <div class="pic"><img src=<?php echo $rprofile ?> alt="profile image"></div>
+                    <p id="id"><b>Id: <?php echo $rid ?></b></p>
+                    <p id="name">Name: <?php echo $rname ?></p>
 
-            </div>
+                </div>
 
                 <div class="title">
                     <h4> TITLE: </h4>
@@ -94,7 +59,7 @@ require('../control/getreporter.php');
                         Pictures
                     </h4>
                     <img id="image" src=""></img>
-                    
+
                 </div>
 
                 <div class="small">

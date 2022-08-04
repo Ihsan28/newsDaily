@@ -1,4 +1,3 @@
-
 function pendingnewsrequestcount() {
     var xhttp = new XMLHttpRequest();
     var res;
@@ -12,7 +11,26 @@ function pendingnewsrequestcount() {
         }
     };
 
-    xhttp.open("POST","/wt-final-project/editor/control/getpendingnews.php",true);
+    xhttp.open("POST","/newsDaily/editor/control/getpendingnews.php",true);
+
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send();
+}
+
+function hiddennewsrequestcount() {
+    var xhttp = new XMLHttpRequest();
+    var res;
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            res = JSON.parse(this.responseText);
+            console.log(res);
+            var l = Object.keys(res).length;
+            let nwsRequest = document.getElementById("hiddennews-count");
+            nwsRequest.innerHTML = l.toString();
+        }
+    };
+
+    xhttp.open("POST","/newsDaily/editor/control/getHiddenNews.php",true);
 
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();
@@ -33,7 +51,7 @@ function activeReporterCount() {
 
     xhttp.open(
         "POST",
-        "/wt-final-project/editor/control/getActiveReporter.php",
+        "/newsDaily/editor/control/getActiveReporter.php",
         true
     );
 
@@ -55,7 +73,26 @@ function activeEditorCount() {
         }
     };
 
-    xhttp.open("POST","/wt-final-project/editor/control/getActiveEditor.php",true);
+    xhttp.open("POST","/newsDaily/editor/control/getActiveEditor.php",true);
+
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send();
+}
+
+function activeUserCount() {
+    var xhttp = new XMLHttpRequest();
+    var res;
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            res = JSON.parse(this.responseText);
+            console.log(res);
+            var l = Object.keys(res).length;
+            let usercount = document.getElementById("ac-user-count");
+            usercount.innerHTML = l.toString();
+        }
+    };
+
+    xhttp.open("POST","/newsDaily/editor/control/getActiveUser.php",true);
 
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();
@@ -74,7 +111,7 @@ function newsCount() {
         }
     };
 
-    xhttp.open("POST","/wt-final-project/editor/control/getAllNews.php",true);
+    xhttp.open("POST","/newsDaily/editor/control/getAllNews.php",true);
 
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();
@@ -82,6 +119,7 @@ function newsCount() {
 
 function MyAjaxFunc() {
     pendingnewsrequestcount();
+    hiddennewsrequestcount();
     activeReporterCount();
     activeEditorCount();
     newsCount();

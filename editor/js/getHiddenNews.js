@@ -35,15 +35,12 @@ function MyAjaxFunc() {
           </div>
           </form>
           `;
-
-          //console.log(res[i].id);
-
           maincontainer.appendChild(d);
         }
       }
     };
 
-    xhttp.open("POST", "/newsDaily/editor/control/getpendingnews.php", true);
+    xhttp.open("POST", "/newsDaily/editor/control/getHiddenNews.php", true);
   
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();
