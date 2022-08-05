@@ -42,30 +42,34 @@
     font-size: 40px;
     margin-top: 20px;
 }
-/* #n-count
-{
-    width: 430px;
-    
-}
-#r-count
-{
-    width: 450px;
-}
-#reporter-count
-{
-    width: 470px;
-}
 
-#admin-req
+.item-container
 {
-    width: 490px;
+    width:50%;
+    display:grid;
+    grid-template-columns: 1fr;
+    margin-top : 100px;
+    margin-left: 50%;
+    transform:translate(-50%);
+    grid-gap:30px;
+    border:2px solid gray;
+    padding:50px;
+    color: rgb(253, 253, 253);
    
 }
-#reporter-req
+.item-container a
 {
-    width: 510px;
+    text-decoration: none;
+    font-size: 30px;
+    height:70px;
+    width: 100%;
+    background-color: rgb(91, 91, 97);
+    color: rgb(253, 253, 253);
+    text-align: center;
+    padding-top:12px;
+    border-radius:5px;
 }
-#editor-req
+.item-container .btn5:hover
 {
-    width: 480px;
-} */
+    background-color:rgb(37, 37, 44);
+}
