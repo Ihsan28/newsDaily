@@ -20,9 +20,9 @@ function MyAjaxFunc() {
     };
 
     xhttp.open("POST", "/newsDaily/editor/control/getnews.php", true);
-  
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();
   }
 
+  
   

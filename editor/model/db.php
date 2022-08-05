@@ -115,12 +115,47 @@ class db
         return $result;
     }
 
+    function getSearchNews($con,$table,$data)
+    {
+        if($data!=""){
+            $result = $con->query("SELECT * FROM  $table where title like '%$data%'");
+
+        }
+        else{
+            $result = $con->query("SELECT * FROM  $table");
+        }
+        return $result;
+    }
+
     function getuser($con,$table)
     {
         $result = $con->query("SELECT * FROM  $table where status = 'approved'"); 
         return $result;
     }
 
+    function SuspendReporter($con,$table,$id)
+    {
+        $sql ="update ".$table." set status = 'suspend' where id = '".$id."'";  
+        $result = $con->query($sql);
+    }
+
+    function RevokeSuspendReporter($con,$table,$id)
+    {
+        $sql ="update ".$table." set status = 'approved' where id = '".$id."'";  
+        $result = $con->query($sql);
+    }
+
+    function getSuspendedReporter($con,$table)
+    {
+        $result = $con->query("SELECT * FROM  $table where status = 'suspend'"); 
+        return $result;
+    }
+
+    function ApprovedReporter($con,$table,$id)
+    {
+        $sql ="update ".$table." set status = 'suspend' where id = '".$id."'";  
+        $result = $con->query($sql);
+    }
 
     function update_news_status($con,$table,$id,$status)
     {

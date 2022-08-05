@@ -1,8 +1,10 @@
 <?php
-require('../model/db.php');
+session_start();
+require_once('../model/db.php');
 $connection = new db();
 $conobj = $connection->OpenCon();
-$userdata = $connection->getPendingnewsRequest($conobj, "news");
+$nid=$_SESSION['nid'];
+$userdata = $connection->getSearchNews($conobj, "news", $_REQUEST['data']);
 $connection->CloseCon($conobj);
 $emparray = array();
 while ($row = mysqli_fetch_assoc($userdata)) {

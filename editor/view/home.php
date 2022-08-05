@@ -31,7 +31,7 @@ require('../control/geteditorinfo.php');
     <section id="space-maintain">
 
         <div class="u-count" >
-            <p>Total News Count</p>
+            <p>All News Count</p>
             <a id="view-btn" href="./totalnews.php">VIEW</a>
             <br>
             <div class="count">
@@ -60,6 +60,15 @@ require('../control/geteditorinfo.php');
         </div>
 
         <div class="u-count" >
+            <p>Suspended Reporters</p>
+            <a id="view-btn" href="./getSuspendedReporter.php">VIEW</a>
+            <br>
+            <div class="count">
+            <p id="ac-suspend-count">0</p>
+            </div>
+        </div>
+
+        <div class="u-count" >
             <p>Active Editor</p>
             <a id="view-btn" href="./getActiveEditor.php">VIEW</a>
             <br>
@@ -71,21 +80,21 @@ require('../control/geteditorinfo.php');
 
         <div class="u-count" >
             <p>Active Reporter</p>
-            <a id="view-btn" href="./getActiveEditor.php">VIEW</a>
+            <a id="view-btn" href="./getActiveReporter.php">VIEW</a>
             <br>
             <div class="count">
             <p id="ac-reporter-count">0</p>
             </div>
         </div>
 
-        <div class="u-count" >
+        <!-- <div class="u-count" >
             <p>Active User</p>
             <a id="view-btn" href="./getActiveUser.php">VIEW</a>
             <br>
             <div class="count">
             <p id="ac-user-count">0</p>
             </div>
-        </div>
+        </div> -->
 
         
 

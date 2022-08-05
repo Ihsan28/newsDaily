@@ -59,6 +59,29 @@ function activeReporterCount() {
     xhttp.send();
 }
 
+function suspendedReporterCount() {
+    var xhttp = new XMLHttpRequest();
+    var res;
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            res = JSON.parse(this.responseText);
+            console.log(res);
+            var l = Object.keys(res).length;
+            console.log(l);
+            let usercount = document.getElementById("ac-suspend-count");
+            usercount.innerHTML = l.toString();
+        }
+    };
+
+    xhttp.open(
+        "POST",
+        "/newsDaily/editor/control/getSuspendedReporter.php",
+        true
+    );
+
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send();
+}
 
 function activeEditorCount() {
     var xhttp = new XMLHttpRequest();
@@ -119,6 +142,7 @@ function newsCount() {
 
 function MyAjaxFunc() {
     pendingnewsrequestcount();
+    suspendedReporterCount();
     hiddennewsrequestcount();
     activeReporterCount();
     activeEditorCount();

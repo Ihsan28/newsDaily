@@ -6,8 +6,6 @@ if (empty($_SESSION["email"])) {
 require('../control/geteditorinfo.php');
 require('../control/viewpendingnewscheck.php');
 ?>
-<!-- $dob,$image -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,38 +16,43 @@ require('../control/viewpendingnewscheck.php');
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/pendingnews.css">
+    <script src="../js/gettotalnews.js"></script>
     <title>Document</title>
 </head>
 
 <body>
-<?php include('./navigation.php') ?>
-<?php include('./sideBar.php') ?>
+    <?php include('./navigation.php') ?>
+    <?php include('./sideBar.php') ?>
 
     <section id="space-maintain">
-        <div id="main-container">
-            <div class="p-container">
-                <div>
-                    <p>ID </p>
-                </div>
-                <div>
-                    <p>REPORTER</p>
-                </div>
-                <div>
-                    <p>TITLE </p>
-                </div>
-                <div>
-                    <p>CATAGORY</p>
-                </div>
-                <div>
-                    <p>VIEW</p>
+        <div class="find-news">
+            <input class="find-news" type="text" name="find" id="find" onkeyup="findNews()" placeholder="Find News By Title">
+            <div id="main-container">
+
+                <div class="p-container">
+                    <div>
+                        <p>ID </p>
+                    </div>
+                    <div>
+                        <p>REPORTER</p>
+                    </div>
+                    <div>
+                        <p>TITLE </p>
+                    </div>
+                    <div>
+                        <p>CATAGORY</p>
+                    </div>
+                    <div>
+                        <p>VIEW</p>
+                    </div>
+
                 </div>
 
+                <script src="../js/gettotalnews.js"></script>
+                <script>
+                    MyAjaxFunc();
+                </script>
             </div>
-
-            <script src="../js/gettotalnews.js"></script>
-            <script>
-                MyAjaxFunc();
-            </script>
         </div>
     </section>
 
