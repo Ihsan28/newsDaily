@@ -38,7 +38,7 @@ function validateForm() {
     } else {
         
         ex=/^[0-9a-zA-Z_' ]*/;
-        if (name.length < 5) {
+        if (name.length < 3) {
             alert("name must be five characters or more");
             flag = false;
         } else if (!name.match(ex)) {
@@ -53,13 +53,14 @@ function validateForm() {
         }
 
         ex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
-        if (password.length < 8) {
-            alert("password must contain at least 8 characters");
+        if (password.length < 4) {
+            alert("password must contain at least 4 characters");
             flag = false;
-        } else if (!password.match(ex)) {
-            alert("password must contain at least 8 characters and a digit, upper case and lower case characters");
-            flag = false;
-        }
+        } 
+        // else if (!password.match(ex)) {
+        //     alert("password must contain at least 4 characters and a digit, upper case and lower case characters");
+        //     flag = false;
+        // }
         
         if (confirmpassword.length< 8 || !confirmpassword.match(ex)) {
             alert("You entered wrong password");

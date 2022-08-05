@@ -39,7 +39,7 @@ function validateForm() {
     } else {
         
         ex=/^[0-9a-zA-Z_' ]*/;
-        if (name.length < 5) {
+        if (name.length < 3) {
             document.getElementById("nameerror").innerHTML = "you must enter minimum 5 letter of your name";
             alert("name must be five characters or more");
             flag = false;
@@ -57,13 +57,14 @@ function validateForm() {
         }
         
         ex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
-        if (password.length < 8) {
-            document.getElementById("passworderror").innerHTML = "password must contain at least 8 characters";
+        if (password.length < 4) {
+            document.getElementById("passworderror").innerHTML = "password must contain at least 4 characters";
             flag = false;
-        } else if (!password.match(ex)) {
-            document.getElementById("passworderror").innerHTML = "condition  not match";
-            flag = false;
-        }
+        } 
+        // else if (!password.match(ex)) {
+        //     document.getElementById("passworderror").innerHTML = "condition  not match";
+        //     flag = false;
+        // }
         
         if (confirmpassword !== password) {
             document.getElementById("confirmpassworderror").innerHTML = "you must match with password";

@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($name)) {
         $validateName = "Empty name field";
         $flag = 0;
-    } elseif(strlen($name) < 5){
+    } elseif(strlen($name) < 3){
         $validateName = "Name must be at least 5 characters";
         $flag = 0;
     } elseif(!preg_match("/^[a-zA-Z-'\. ]*$/", $name)){
@@ -78,13 +78,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif ($password != $confirmPassword) {
         $validPassword = "password not match";
         $flag = 0;
-    } elseif (strlen($password) < 8) {
+    } elseif (strlen($password) < 4) {
         $validPassword = "password must contain at least 8 characters";
         $flag = 0;
-    } elseif (!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/", $password)) {
-        $validPassword = "Password must have at least one character from (a-z), (A-Z), (0-9), (!@#$%^&*) each group";
-        $flag = 0;
-    } else {
+     } 
+    //elseif (!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/", $password)) {
+    //     $validPassword = "Password must have at least one character from (a-z), (A-Z), (0-9), (!@#$%^&*) each group";
+    //     $flag = 0;
+    // }
+     else {
         $validPassword = "password correct";
     }
 
