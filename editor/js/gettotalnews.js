@@ -27,6 +27,9 @@ function MyAjaxFunc() {
           <div class="text-bold">
           <p>` + res[i].catagory + `</p>
           </div>
+          <div class="text-bold">
+          <p>` + res[i].status + `</p>
+          </div>
           <div class="view">
           <input type="submit" value="view" name="view" >
           </div>
