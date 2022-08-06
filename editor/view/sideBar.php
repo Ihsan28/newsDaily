@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (empty($_SESSION["email"])) {
+    header("Location: ../control/signin.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
