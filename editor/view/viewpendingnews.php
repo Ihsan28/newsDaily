@@ -62,10 +62,7 @@ require('../control/getreporter.php');
 
                 </div>
 
-                <div class="small">
-
-                </div>
-                <div class="response">
+                <div id="response" class="response">
                     <div class="accept">
                         <input type="submit" value="accept" name="accept">
                     </div>

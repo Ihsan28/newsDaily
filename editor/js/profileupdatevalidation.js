@@ -61,11 +61,6 @@ function validateForm() {
         //     alert("password must contain at least 4 characters and a digit, upper case and lower case characters");
         //     flag = false;
         // }
-        
-        if (confirmpassword.length< 8 || !confirmpassword.match(ex)) {
-            alert("You entered wrong password");
-            flag = false;
-        }
 
         ex=/^\+?[0-9-]{7,15}$/;
         if(!phone.match(ex)){

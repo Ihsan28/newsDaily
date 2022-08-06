@@ -89,14 +89,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $validPassword = "password correct";
     }
 
-    if (empty($confirmPassword)) {
-        $validConfirmPassword = "Empty password field.";
-        $flag = 0;
-    } elseif ($_SESSION['password'] != $confirmPassword) {
-        $validConfirmPassword = "password not match";
-        $flag = 0;
-    }
-
     if (!isset($_REQUEST["gender"])) {
         $genderValidation = "Select your gender";
         $flag = 0;

@@ -66,8 +66,8 @@ require('../control/getreporter.php');
 
                 </div>
 
-                <div class="box reject small">
-                    <input type="submit" value="hide" name="hidden">
+                <div class="reject response">
+                    <input type="submit" value="Hide" name="hidden">
                 </div>
                 <script src="../js/getnews.js"></script>
                 <script>

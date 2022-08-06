@@ -76,19 +76,19 @@
     color: rgb(17, 19, 16);
 }
 
-.box input {
+/* .box input {
     font-size: 16px;
     width: auto;
     height: 30px;
     border: 1px solid black;
     padding-left: 20px;
     border-radius: 5px;
-}
+} */
 
-.small {
+/* .small {
     width: 95%;
     padding-bottom: 5px;
-}
+} */
 
 .title h4{
     color: rgb(17, 19, 16);
@@ -162,7 +162,7 @@
 
 .response{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .response input:hover{

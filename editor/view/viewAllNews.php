@@ -62,24 +62,21 @@ require('../control/getreporter.php');
 
                 </div>
 
-                <div class="small">
-
-                </div>
-
-                <div class="box accept small">
+                <div class="response">
+                <div class="accept">
                     <input type="submit" value="accept" name="acceptall">
                 </div>
 
-                <div class="box update small">
+                <div class="update">
                     <input id="view-btn" type="submit" value="update" name="updateall">
                 </div>
 
-                <div class="box reject small">
+                <div class="reject">
                     <input type="submit" value="reject" name="rejectall">
                 </div>
-                <div>
-                    
                 </div>
+                
+                
                 <script src="../js/getnews.js"></script>
                 <script>
                     MyAjaxFunc();
