@@ -55,7 +55,6 @@ require('../control/viewpendingnewscheck.php');
                 MyAjaxFunc();
             </script>
         </div>
-
     </section>
 
 </body>

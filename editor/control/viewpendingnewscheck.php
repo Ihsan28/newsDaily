@@ -7,12 +7,14 @@ if (isset($_POST['view'])) {
     
 }
 
+
+
 if (isset($_POST['viewApproved'])) {
 
     viewApprovedNews();
     
 }
-
+// for pending news
 if (isset($_POST['accept'])) {
 
      newsAccept($_SESSION['nid'],$_SESSION['id'],"");
@@ -29,6 +31,29 @@ if (isset($_POST['reject'])) {
     
 }
 
+// for totalnews
+if (isset($_POST['viewall'])) {
+
+    viewAllNews();
+    
+}
+if (isset($_POST['acceptall'])) {
+
+    newsAcceptAll($_SESSION['nid'],$_SESSION['id'],"");
+}
+
+if (isset($_POST['updateall'])) {
+
+   newsUpdateAll($_SESSION['nid'],$_SESSION['id'],$_REQUEST['title'],$_REQUEST['body'],"updated");
+}
+
+if (isset($_POST['rejectall'])) {
+
+    newsRejectAll($_SESSION['nid'],$_SESSION['id'],"");
+   
+}
+
+// for hide news
 if (isset($_POST['hidden'])) {
 
     newsHide($_SESSION['nid'],$_SESSION['id'],"");
@@ -76,6 +101,48 @@ function newsReject($id, $eid,$remark)
     }
 }
 
+// total news functions
+function newsAcceptAll($id, $eid, $remark)
+{
+    if (isset($_POST['acceptall'])) {
+
+        $connection = new db();
+        $conobj = $connection->OpenCon();
+        $editordata = $connection->updateNewsStatus($conobj, "news", $id, $eid, "approved", $remark);
+        $connection->closeCon($conobj);
+    
+        header("Location: ../view/totalnews.php");
+    }
+}
+
+function newsUpdateAll($id, $eid,$title1,$body1, $remark)
+{
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+        $connection = new db();
+        $conobj = $connection->OpenCon();
+        $title=str_replace("'", "''", "$title1");
+        $body= str_replace("'", "''", "$body1");
+        $editordata = $connection->updateNewsData($conobj, "news", $id, $title, $body, $eid, "approved", $remark);
+        $connection->closeCon($conobj);
+    
+        header("Location: ../view/totalnews.php");
+    }
+}
+
+function newsRejectAll($id, $eid,$remark)
+{
+    if (isset($_POST['rejectall'])) {
+
+        $connection = new db();
+        $conobj = $connection->OpenCon();
+        $editordata = $connection->updateNewsStatus($conobj, "news", $id, $eid, "reject", $remark);
+        $connection->closeCon($conobj);
+    
+        header("Location: ../view/totalnews.php");
+    }
+}
+// hide news function
 function newsHide($id, $eid,$remark)
 {
     if (isset($_POST['hidden'])) {
@@ -98,6 +165,19 @@ function viewNews(){
             $_SESSION['nid']=$nid;
             $_SESSION['rid']=$rid;
             header("Location: ../view/viewpendingnews.php?nid=".$nid);
+                
+    }
+}
+
+function viewAllNews(){
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+     
+        $nid=$_REQUEST["id"];
+        $rid=$_REQUEST["rid"];
+        session_start();
+            $_SESSION['nid']=$nid;
+            $_SESSION['rid']=$rid;
+            header("Location: ../view/viewAllNews.php?nid=".$nid);
                 
     }
 }

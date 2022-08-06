@@ -34,7 +34,6 @@
     grid-template-columns: .5fr .5fr 3fr 2fr 1fr 1fr;
     background-color:rgb(187, 214, 245);
     width: 58vw;
-    /* margin-left: 0px; */
     border: 1px solid rgb(247, 243, 243);
     border-radius: 10px;
     margin-top: 0px;

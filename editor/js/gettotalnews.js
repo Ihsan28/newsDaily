@@ -31,7 +31,7 @@ function MyAjaxFunc() {
           <p>` + res[i].status + `</p>
           </div>
           <div class="view">
-          <input type="submit" value="view" name="view" >
+          <input type="submit" value="view" name="viewall" >
           </div>
           <input type="hidden" name="id" id="id" value ="`+ res[i].id +`">
           <input type="hidden" name="rid" id="rid" value ="`+ res[i].rid +`">
@@ -80,7 +80,7 @@ function MyAjaxFunc() {
           <p>` + res[i].catagory + `</p>
           </div>
           <div class="view">
-          <input type="submit" value="view" name="view" >
+          <input type="submit" value="view" name="viewall" >
           </div>
           <input type="hidden" name="id" id="id" value ="`+ res[i].id +`">
           <input type="hidden" name="rid" id="rid" value ="`+ res[i].rid +`">
