@@ -1,7 +1,7 @@
   <?php
 //session_start();
 if (empty($_SESSION["email"])) {
-    header("Location: ../control/login.php"); // Redirecting To Home Page
+    header("Location: ../control/signin.php"); // Redirecting To Home Page
 }
 //require('../model/db.php');
 require_once('../model/db.php');

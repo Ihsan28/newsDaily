@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (empty($_SESSION["email"])) {
-    header("Location: ../control/login.php");
+    header("Location: ../control/signin.php");
 }
 
 require('../control/profileupdatevalidation.php');

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (empty($_SESSION["email"])) {
-    header("Location: ./login.php");
+    header("Location: ./signin.php");
 }
 else {
     $cookie_name = "user";
