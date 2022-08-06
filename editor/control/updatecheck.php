@@ -22,7 +22,7 @@ function updateEditorExists($name, $email, $password, $gender, $dob, $phone, $ad
     $_SESSION['email'] = $email;
     $_SESSION['password'] = $password;
 
-    header("Location: ../view/home.php");
+    header("Location: ../view/ehome.php");
 }
 
 function deleteThisEditor()

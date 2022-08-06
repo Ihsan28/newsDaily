@@ -5,7 +5,7 @@
 </head>
 <body>
 <div class="nav-left">
-        <a href="./home.php" class="link">Main Panel</a>
+        <a href="./ehome.php" class="link">Main Panel</a>
         <!-- <a href="" class="link">News</a> -->
         <a href="./hidenews.php" class="link">Hide News</a>
         <a href="./suspendReporter.php" class="link">SuspendReporter</a>

@@ -49,7 +49,8 @@ require('../control/signupformvalidation.php');
         </div>
 
         <div class="box">
-            <input type="password" name="password" id="password" placeholder="Enter at least 8 digit password & at least one from (a-z), (A-Z), (0-9), (!@#$%^&*) each group" />
+            <input type="password" name="password" id="password" placeholder="Enter at least 4 digit password " />
+            <!-- & at least one from (a-z), (A-Z), (0-9), (!@#$%^&*) each group -->
             <p class="em"><?php echo $validPassword; ?></p>
         </div>
 
