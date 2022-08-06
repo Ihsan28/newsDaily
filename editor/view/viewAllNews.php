@@ -43,7 +43,7 @@ require('../control/getreporter.php');
 
                 <div class="title">
                     <h4> TITLE: </h4>
-                    <textarea name="title" id="title" rows="2" cols="56"></textarea>
+                    <textarea name="title" id="title" rows="3" cols="56"></textarea>
                 </div>
                 <br>
 
@@ -76,6 +76,9 @@ require('../control/getreporter.php');
 
                 <div class="box reject small">
                     <input type="submit" value="reject" name="rejectall">
+                </div>
+                <div>
+                    
                 </div>
                 <script src="../js/getnews.js"></script>
                 <script>

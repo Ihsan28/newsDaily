@@ -43,7 +43,7 @@ require('../control/getreporter.php');
 
                 <div class="title">
                     <h4> TITLE: </h4>
-                    <textarea name="title" id="title" rows="2" cols="56"></textarea>
+                    <textarea name="title" id="title" rows="3" cols="56"></textarea>
                 </div>
                 <br>
 
@@ -65,18 +65,20 @@ require('../control/getreporter.php');
                 <div class="small">
 
                 </div>
+                <div class="response">
+                    <div class="accept">
+                        <input type="submit" value="accept" name="accept">
+                    </div>
 
-                <div class="box accept small">
-                    <input type="submit" value="accept" name="accept">
+                    <div class="update">
+                        <input id="view-btn" type="submit" value="update" name="update">
+                    </div>
+
+                    <div class="reject">
+                        <input type="submit" value="reject" name="reject">
+                    </div>
                 </div>
 
-                <div class="box update small">
-                    <input id="view-btn" type="submit" value="update" name="update">
-                </div>
-
-                <div class="box reject small">
-                    <input type="submit" value="reject" name="reject">
-                </div>
                 <script src="../js/getnews.js"></script>
                 <script>
                     MyAjaxFunc();

@@ -14,7 +14,7 @@ function MyAjaxFunc() {
         for (i = 0; i < l; i++) {
           title.innerHTML=res[i].title;
           body.innerHTML=res[i].body;
-          image.setAttribute.add("src",res[i].images);
+          image.setAttribute("src",res[i].images);
         }
       }
     };
