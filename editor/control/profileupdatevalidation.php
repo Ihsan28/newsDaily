@@ -118,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($street)) {
         $validateStreet = "Empty street field";
         $flag = 0;
-    } else if (!preg_match("/^([A-Za-z0-9#]+)([\d\w\-#`.\s',]*)$/", $street)) {
+    } else if (!preg_match("/^([A-Za-z0-9#]+)([\d\w\-#`.:\s',]*)$/", $street)) {
         $validateStreet = "you can only use alphanumeric characters and (-#`./,)";
         $flag = 0;
     } else {

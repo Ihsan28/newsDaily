@@ -68,7 +68,7 @@ function validateForm() {
             flag = false;
         }
 
-        ex=/^([A-Za-z0-9#]+)([\d\w\-#`.\s',]*)$/;
+        ex=/^([A-Za-z0-9#]+)([\d\w\-#`.:\s',]*)$/;
         if(!street.match(ex)){
             alert("you can only use alphanumeric characters and (-#`./,) at street field");
             flag = false;

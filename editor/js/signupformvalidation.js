@@ -38,7 +38,7 @@ function validateForm() {
         flag = false;
     } else {
         
-        ex=/^[0-9a-zA-Z_' ]*/;
+        ex=/^[0-9a-zA-Z_'\- ]*/;
         if (name.length < 3) {
             document.getElementById("nameerror").innerHTML = "you must enter minimum 5 letter of your name";
             alert("name must be five characters or more");
@@ -82,9 +82,9 @@ function validateForm() {
             document.getElementById("phoneerror").innerHTML="";
         }
 
-        ex=/^([A-Za-z0-9#]+)([\d\w\-#`.\s',]*)$/;
+        ex=/^([A-Za-z0-9]+)([\d\w\-#`.:\s',]*)$/;
         if(!street.match(ex)){
-            document.getElementById("streeterror").innerHTML = "you can only use alphanumeric characters and (-#`./,)";
+            document.getElementById("streeterror").innerHTML = "you can only use alphanumeric characters and (-#`./,) in address";
             flag = false;
         } else {
             document.getElementById("streeterror").innerHTML ="";
