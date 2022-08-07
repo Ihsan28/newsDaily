@@ -32,7 +32,7 @@ require('../control/geteditorinfo.php');
 
         <div class="u-count" >
             <p>All News Count</p>
-            <a id="view-btn" href="./totalnews.php">VIEW</a>
+            <a id="view-btn" class="view" href="./totalnews.php">VIEW</a>
             <br>
             <div class="count">
             <p id="total-news-count">0</p>
@@ -42,7 +42,7 @@ require('../control/geteditorinfo.php');
 
         <div class="u-count" >
             <p>Pending News Count</p>
-            <a id="view-btn" href="./pendingnews.php">VIEW</a>
+            <a id="view-btn1" class="view" href="./pendingnews.php">VIEW</a>
             <br>
             <div class="count">
             <p id="pendingnews-count">0</p>
@@ -51,7 +51,7 @@ require('../control/geteditorinfo.php');
 
         <div class="u-count" >
             <p>Hidden News Count</p>
-            <a id="view-btn" href="./hiddennews.php">VIEW</a>
+            <a id="view-btn2" class="view" href="./hiddennews.php">VIEW</a>
             <br>
             <div class="count">
             <p id="hiddennews-count">0</p>
@@ -61,7 +61,7 @@ require('../control/geteditorinfo.php');
 
         <div class="u-count" >
             <p>Suspended Reporters</p>
-            <a id="view-btn" href="./getSuspendedReporter.php">VIEW</a>
+            <a id="view-btn3" class="view" href="./getSuspendedReporter.php">VIEW</a>
             <br>
             <div class="count">
             <p id="ac-suspend-count">0</p>
@@ -70,7 +70,7 @@ require('../control/geteditorinfo.php');
 
         <div class="u-count" >
             <p>Active Editor</p>
-            <a id="view-btn" href="./getActiveEditor.php">VIEW</a>
+            <a id="view-btn4" class="view" href="./getActiveEditor.php">VIEW</a>
             <br>
             <div class="count">
             <p id="ac-editor-count">0</p>
@@ -80,7 +80,7 @@ require('../control/geteditorinfo.php');
 
         <div class="u-count" >
             <p>Active Reporter</p>
-            <a id="view-btn" href="./getActiveReporter.php">VIEW</a>
+            <a id="view-btn" class="view" href="./getActiveReporter.php">VIEW</a>
             <br>
             <div class="count">
             <p id="ac-reporter-count">0</p>

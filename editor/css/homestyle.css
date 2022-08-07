@@ -25,14 +25,7 @@
 }
 .u-count a
 {
-    display: inline-block;
-    width: max-content;
-    color: white;
-    background-color: rgba(62, 22, 243, 0.904);
-    text-decoration: none;
-    margin-left: 85px;
-    padding: 5px 20px 5px 20px;
-    border-radius: 5px;
+    
 
 
 }
@@ -44,36 +37,20 @@
 .count p{
     color: rgb(37, 26, 109);
     font-size: 40px;
+    font-weight: 900;
     margin-top: 20px;
 }
-
-.item-container
-{
-    width:50%;
-    display:grid;
-    grid-template-columns: 1fr;
-    margin-top : 100px;
-    margin-left: 50%;
-    transform:translate(-50%);
-    grid-gap:30px;
-    border:2px solid gray;
-    padding:50px;
-    color: rgb(253, 253, 253);
-   
-}
-.item-container a
-{
+.view{
+    display: inline-block;
+    width: max-content;
+    color: white;
+    background-color: rgba(62, 22, 243, 0.904);
     text-decoration: none;
-    font-size: 30px;
-    height:70px;
-    width: 100%;
-    background-color: rgb(91, 91, 97);
-    color: rgb(253, 253, 253);
-    text-align: center;
-    padding-top:12px;
-    border-radius:5px;
-}
-.item-container .btn5:hover
-{
-    background-color:rgb(37, 37, 44);
+    margin-left: 85px;
+    padding: 10px 20px 5px 20px;
+    border-radius: 50%;
+
+    font-size: 25px;
+    font-weight: 700;
+    height: 60px;
 }

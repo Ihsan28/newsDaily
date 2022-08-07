@@ -152,6 +152,8 @@
 .signin {
     text-decoration: none;
     background-color: rgb(68, 103, 219);
+    height: 35px;
+    font-size: 20px;
     color: rgb(255, 255, 255);
     padding: 2px;
     text-align: center;
