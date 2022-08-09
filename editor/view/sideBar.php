@@ -15,7 +15,7 @@
         <a href="./ehome.php" class="link">Main Panel</a>
         <!-- <a href="" class="link">News</a> -->
         <a href="./hidenews.php" class="link">Hide News</a>
-        <a href="./suspendReporter.php" class="link">SuspendReporter</a>
+        <a href="./suspendReporter.php" class="link">Suspend Reporter</a>
         <!-- <a href="" class="link">Requests</a> -->
         <a href="./profile.php" class="link">Account Settings</a>
     </div>

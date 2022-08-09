@@ -46,9 +46,9 @@ require('../control/viewpendingnewscheck.php');
 
             </div>
 
-            <script src="../js/getHiddenNews.js"></script>
+            <script src="../js/getnews.js"></script>
             <script>
-                MyAjaxFunc();
+                getHiddenNews();
             </script>
         </div>
     </section>

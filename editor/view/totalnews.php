@@ -50,9 +50,9 @@ require('../control/viewpendingnewscheck.php');
 
         </div>
         <div id="main-container">
-            <script src="../js/gettotalnews.js"></script>
+            <script src="../js/getnews.js"></script>
             <script>
-                MyAjaxFunc();
+                getAllNews();
             </script>
         </div>
     </section>

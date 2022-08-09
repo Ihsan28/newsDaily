@@ -45,9 +45,9 @@ require('../control/geteditorinfo.php');
 
             </div>
 
-            <script src="../js/getActiveEditor.js"></script>
+            <script src="../js/getlist.js"></script>
             <script>
-                MyAjaxFunc();
+                getActiveEditor();
             </script>
         </div>
     </section>

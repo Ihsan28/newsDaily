@@ -62,26 +62,28 @@ require('../control/getreporter.php');
 
                 </div>
 
-                <div class="response">
-                <div class="accept">
-                    <input type="submit" value="accept" name="acceptall">
+                <div id="response" class="response">
+                    <div class="accept">
+                        <input type="submit" value="unhide" name="unhide">
+                    </div>
+
+                    <div class="update">
+                        <input id="view-btn" type="submit" value="update" name="updatehidden">
+                    </div>
+
+                    <div class="reject">
+                        <input type="submit" value="reject" name="rejecthidden">
+                    </div>
                 </div>
 
-                <div class="update">
-                    <input id="view-btn" type="submit" value="update" name="updateall">
-                </div>
-
-                <div class="reject">
-                    <input type="submit" value="reject" name="rejectall">
-                </div>
-                </div>
-                
-                
-                <script src="../js/getnews.js"></script>
+                <script src="../js/getNews.js"></script>
                 <script>
                     getNews();
                 </script>
+
+
         </div>
+
     </section>
 </body>
 

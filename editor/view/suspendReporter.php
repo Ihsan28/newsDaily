@@ -48,9 +48,9 @@ require('../control/geteditorinfo.php');
 
             </div>
 
-            <script src="../js/suspendReporter.js"></script>
+            <script src="../js/getlist.js"></script>
             <script>
-                MyAjaxFunc();
+                suspendReporter();
             </script>
         </div>
     </section>

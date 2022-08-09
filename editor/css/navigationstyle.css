@@ -132,9 +132,9 @@ body {
 .nav-left {
     padding-top: 50px;
     margin-top: 60px;
-    background-color: #1E1E1E;
-    width: 260px;
-    height: 919px;
+    background-color: #0a0000;
+    width: 270px;
+    height: 100%;
     position: fixed;
     left: 0;
     display: grid;

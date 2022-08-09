@@ -78,7 +78,7 @@ require('../control/getreporter.php');
 
                 <script src="../js/getnews.js"></script>
                 <script>
-                    MyAjaxFunc();
+                    getNews();
                 </script>
 
 

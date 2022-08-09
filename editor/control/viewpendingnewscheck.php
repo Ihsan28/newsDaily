@@ -7,12 +7,10 @@ if (isset($_POST['view'])) {
     
 }
 
-
-
 if (isset($_POST['viewApproved'])) {
 
     viewApprovedNews();
-    
+
 }
 // for pending news
 if (isset($_POST['accept'])) {
@@ -54,12 +52,36 @@ if (isset($_POST['rejectall'])) {
 }
 
 // for hide news
+if (isset($_POST['viewhidden'])) {
+
+    viewHiddenNews();
+    
+}
+
 if (isset($_POST['hidden'])) {
 
     newsHide($_SESSION['nid'],$_SESSION['id'],"");
-   
 }
 
+if (isset($_POST['unhide'])) {
+
+    newsUnhide($_SESSION['nid'],$_SESSION['id'],"");
+}
+
+if (isset($_POST['updatehidden'])) {
+
+    newsUpdatehidden($_SESSION['nid'],$_SESSION['id'],$_REQUEST['title'],$_REQUEST['body'],"updated");
+ }
+ 
+ if (isset($_POST['rejecthidden'])) {
+ 
+    newsRejectHidden($_SESSION['nid'],$_SESSION['id'],"");
+    
+ }
+
+
+
+// -----------------------------functions----------------------------------------------------------
 function newsAccept($id, $eid, $remark)
 {
     if (isset($_POST['accept'])) {
@@ -83,7 +105,7 @@ function newsUpdate($id, $eid,$title1,$body1, $remark)
         $body= str_replace("'", "''", "$body1");
         $editordata = $connection->updateNewsData($conobj, "news", $id, $title, $body, $eid, "approved", $remark);
         $connection->closeCon($conobj);
-    
+
         header("Location: ../view/pendingnews.php");
     }
 }
@@ -156,6 +178,48 @@ function newsHide($id, $eid,$remark)
     }
 }
 
+function newsUnhide($id, $eid,$remark)
+{
+    if (isset($_POST['unhide'])) {
+
+        $connection = new db();
+        $conobj = $connection->OpenCon();
+        $editordata = $connection->updateNewsStatus($conobj, "news", $id, $eid, "approved", $remark);
+        $connection->closeCon($conobj);
+    
+        header("Location: ../view/hiddennews.php");
+    }
+}
+
+function newsUpdatehidden($id, $eid,$title1,$body1, $remark)
+{
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+        $connection = new db();
+        $conobj = $connection->OpenCon();
+        $title=str_replace("'", "''", "$title1");
+        $body= str_replace("'", "''", "$body1");
+        $editordata = $connection->updateNewsData($conobj, "news", $id, $title, $body, $eid, "approved", $remark);
+        $connection->closeCon($conobj);
+    
+        header("Location: ../view/hiddennews.php");
+    }
+}
+
+function newsRejectHidden($id, $eid,$remark)
+{
+    if (isset($_POST['rejecthidden'])) {
+
+        $connection = new db();
+        $conobj = $connection->OpenCon();
+        $editordata = $connection->updateNewsStatus($conobj, "news", $id, $eid, "reject", $remark);
+        $connection->closeCon($conobj);
+    
+        header("Location: ../view/hiddennews.php");
+    }
+}
+
+// view
 function viewNews(){
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
      
@@ -191,6 +255,19 @@ function viewApprovedNews(){
             $_SESSION['nid']=$nid;
             $_SESSION['rid']=$rid;
             header("Location: ../view/viewApprovednews.php?nid=".$nid);
+                
+    }
+}
+
+function viewHiddenNews(){
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+     
+        $nid=$_REQUEST["id"];
+        $rid=$_REQUEST["rid"];
+        session_start();
+            $_SESSION['nid']=$nid;
+            $_SESSION['rid']=$rid;
+            header("Location: ../view/viewHiddenNews.php?nid=".$nid);
                 
     }
 }
